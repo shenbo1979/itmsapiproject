@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="TX">
+  <title>TX</title>
+  <desc>TX 交换机运维控制台图标：深蓝渐变圆角底板，白色 T 与 X 合体字标——横杆与竖脊构成 T，两条交叉羽翼构成 X，四端收尖形似天使之翼。</desc>
+  <defs>
+    <linearGradient id="txBg" gradientUnits="userSpaceOnUse" x1="6" y1="2" x2="58" y2="62">
+      <stop offset="0" stop-color="#6D96FF"/>
+      <stop offset="0.45" stop-color="#3D66F7"/>
+      <stop offset="1" stop-color="#1B2FA8"/>
+    </linearGradient>
+    <radialGradient id="txGlow" gradientUnits="userSpaceOnUse" cx="14" cy="10" r="42">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.34"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#txBg)"/>
+  <rect width="64" height="64" rx="15" fill="url(#txGlow)"/>
+  <!-- T：横杆 + 竖脊，竖脊收在双翼的交叉点上，与 X 共用中心 -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round">
+    <path d="M21 12H43"/>
+    <path d="M32 12V33.5"/>
+  </g>
+  <!-- X：两条交叉羽翼，形似天使之翼；每片由两段对称三次曲线收成四端尖角 -->
+  <g fill="#FFFFFF">
+    <path d="M11 17C21.190 32.849 35.190 43.849 53 50C41.451 35.881 27.451 24.881 11 17Z"/>
+    <path d="M53 17C36.549 24.881 22.549 35.881 11 50C28.810 43.849 42.810 32.849 53 17Z"/>
+  </g>
+</svg>

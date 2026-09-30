@@ -1,0 +1,113 @@
+{
+  "note": "回放器自检用例：只校验骨架服务自身的健康/能力/命名空间/注册链路接口，不涉及业务数据与原系统。断言基于“未注册”的隔离环境（TXAPI_REGISTRATION_DIR 指向临时目录），因此业务接口一律返回 code=-3。",
+  "cases": [
+    {
+      "path": "/healthz",
+      "module": "platform",
+      "provider": "go",
+      "method": "POST",
+      "query": {},
+      "expect": {"http": 200, "code": 0, "required": ["message", "data", "data.modules"]},
+      "status": "active"
+    },
+    {
+      "path": "/api/capabilities",
+      "module": "platform",
+      "provider": "go",
+      "method": "POST",
+      "query": {},
+      "expect": {"http": 200, "required": ["modules", "apiVersion"]},
+      "status": "active"
+    },
+    {
+      "path": "/api/v2/switch/ping",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {},
+      "expect": {"http": 200, "code": 0, "required": ["data.module", "data.version"]},
+      "status": "active"
+    },
+    {
+      "path": "/api/v2/olt/ping",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {},
+      "expect": {"http": 200, "code": 0, "required": ["data.module", "data.version"]},
+      "status": "active"
+    },
+    {
+      "path": "/api/v2/platform/registration/",
+      "module": "platform",
+      "provider": "go",
+      "method": "POST",
+      "query": {"nAct": "0"},
+      "expect": {"http": 200, "code": 0, "required": ["data.registered", "data.record.szMachineId", "data.record.szRandomCode", "data.record.szAesKey"]},
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleRegistrationInfo/",
+      "module": "platform",
+      "provider": "go",
+      "method": "POST",
+      "query": {"nAct": "0"},
+      "expect": {"http": 200, "code": 0, "required": ["data.registered", "data.record.szMachineId", "data.record.dtRegistrationDate", "data.record.nValidDuration"]},
+      "status": "active"
+    },
+    {
+      "path": "/itms/validateThirdToken/",
+      "module": "platform",
+      "provider": "go",
+      "method": "POST",
+      "query": {"nAct": "0"},
+      "expect": {"http": 200, "code": 0, "required": ["message"]},
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchInfo/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {"nAct": "0"},
+      "expect": {"http": 200, "code": -3, "required": ["message", "data.registered"]},
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchVenue/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {"nAct": "0"},
+      "expect": {"http": 200, "code": -3, "required": ["data.registered"]},
+      "status": "active"
+    },
+    {
+      "path": "/api/v2/switch/ledger",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {},
+      "expect": {"http": 200, "code": 0, "required": ["data"]},
+      "status": "active"
+    },
+    {
+      "path": "/itms/HandleUploadFile/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {"nAct": "0"},
+      "expect": {"http": 200, "code": -3, "required": ["data.registered"]},
+      "status": "active"
+    },
+    {
+      "path": "/client/fnGetAllParams/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {"nAct": "0"},
+      "expect": {"http": 200, "code": -1, "required": ["data.provider"]},
+      "status": "active"
+    }
+  ]
+}

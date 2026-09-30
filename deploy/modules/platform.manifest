@@ -1,0 +1,28 @@
+# platform（平台层，M1 新增；字段含义见 deploy/README.md）
+#
+# 说明：注册 / 授权不随业务模块卸载（见 docs/03-data-authority.md 第 3 节结论 4），
+# 因此单独列出 platform 清单：三个交付形态（switch / olt / all）都必须包含本清单文件。
+module.id=platform
+module.title=平台层（注册/授权、能力清单）
+module.version=0.1.0-m1
+module.depends=
+# 平台层没有独立端口：随同一进程提供（老接口 /itms/handleRegistrationInfo/、/itms/validateThirdToken/，
+# 新命名空间 /api/v2/platform/registration/ 与 /api/capabilities）。
+module.port=
+module.env=platform.env
+module.service=
+# 一模块一库：平台库保存 tbValidation（注册信息）
+module.datadir=/home/tx/platform.db
+# 平台层文件：前端壳（菜单/注册页）与平台运行时文件
+module.files=bin/txapi,web/index.html,web/server.cjs,web/package.json,web/src/main.js,web/src/app.js,web/src/api.js,web/src/styles.css,web/src/shell/registration.js,web/src/shell/placeholder.js,web/src/modules/_scaffold.js
+module.legacy_routes=/itms/handleRegistrationInfo,/itms/validateThirdToken
+module.menus=platform.registration
+# 平台层不依赖外部服务；它管理的外部文件如下（安装/卸载不得清理）：
+module.external=
+# 数据与授权文件（升级时要保留，卸载默认保留）：
+#   /opt/itmsapikey/itmsapikey.key      本机注册码（TXR1，与主注册服务 /txapikeygen 互通）
+#   /opt/itmsapikey/registration.state  签名授权状态（到期时间 + 时间锚点，到期判定权威来源）
+#   /home/switchfile/aeskey.key         注册信息里的 AES 密钥（供各模块加密设备凭据）
+#   /dev/shm/verify_info.json           云平台授权窗口（只读，存在时按窗口注册）
+#   /home/tx/platform.db                平台库（tbValidation）
+bundle=switch,olt,all

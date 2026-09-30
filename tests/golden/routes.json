@@ -1,0 +1,1459 @@
+{
+  "summary": {
+    "old_monolith_routes": 52,
+    "new_switch_routes": 18,
+    "old_web_itms_paths": 16,
+    "old_web_client_paths": 32,
+    "old_routes_not_used_by_old_web": 37
+  },
+  "by_module": {
+    "switch": [
+      "/itms/getTerminalMAC/",
+      "/itms/handleDeviceInformation/",
+      "/itms/handleRpcApiConfig/",
+      "/itms/handleSwitchCollectionSettings/",
+      "/itms/handleSwitchInfo/",
+      "/itms/handleSwitchManufacturer/",
+      "/itms/handleSwitchModel/",
+      "/itms/handleSwitchPortDetail/",
+      "/itms/handleSwitchProtocol/",
+      "/itms/handleSwitchPurpose/",
+      "/itms/handleSwitchSnifferConfig/",
+      "/itms/handleSwitchTerminal/",
+      "/itms/handleSwitchVenue/",
+      "/itms/handleSwitchVlan/",
+      "/itms/handleVlanClassifier/",
+      "/itms/handleVlanInformation/",
+      "/itms/validateThirdToken/"
+    ],
+    "olt": [
+      "/itms/handleBoardAndSlotInfo/",
+      "/itms/handleConnectOltUser/",
+      "/itms/handleCurrentConfiguration/",
+      "/itms/handleDBAProfile/",
+      "/itms/handleLineProfile/",
+      "/itms/handleLinkAggregationInfo/",
+      "/itms/handleONTAutoFind/",
+      "/itms/handleONTAutoMatic/",
+      "/itms/handleONTListAndStatus/",
+      "/itms/handleONTRegisterProfile/",
+      "/itms/handleONTRegistration/",
+      "/itms/handleOltConfigAutoSave/",
+      "/itms/handleOltConnect/",
+      "/itms/handleOltLogList/",
+      "/itms/handleOltSavedConfig/",
+      "/itms/handleOltTerminalUser/",
+      "/itms/handleSrvProfile/",
+      "/itms/handleTr069Profile/",
+      "/itms/handleVLANFunctionModule/"
+    ],
+    "tr069": [
+      "/client/apiPolicySave/",
+      "/client/fnDeleteWANPath/",
+      "/client/fnDeployWAN/",
+      "/client/fnDeviceDelete/",
+      "/client/fnDeviceReboot/",
+      "/client/fnDoOrderInfo/",
+      "/client/fnDoQosInfo/",
+      "/client/fnDoSIPInfo/",
+      "/client/fnDoTelnetInfo/",
+      "/client/fnDoWANDelete/",
+      "/client/fnDownModeFile/",
+      "/client/fnEditRoom/",
+      "/client/fnExportTemplate/",
+      "/client/fnFactoryReset/",
+      "/client/fnGetAdminInfo/",
+      "/client/fnGetAllParams/",
+      "/client/fnGetBusinessModeList/",
+      "/client/fnGetSIPInfo/",
+      "/client/fnGetWanConnect/",
+      "/client/fnGetWifiInfo/",
+      "/client/fnImportTemplate/",
+      "/client/fnInfosSave/",
+      "/client/fnLogDelete/",
+      "/client/fnModeCfgSave/",
+      "/client/fnRefreshDeviceInfo/",
+      "/client/fnSendWanPing/",
+      "/client/fnServerSave/",
+      "/client/fnSetAdminInfo/",
+      "/client/fnTestDiag/",
+      "/client/fnUpCpeGroup/",
+      "/client/fnWorkOrderDelete/",
+      "/client/fnWorkOrderSave/",
+      "/itms/handleCpeGroupInfo/",
+      "/itms/handleDeviceDelete/",
+      "/itms/handleDeviceInfo/",
+      "/itms/handleDeviceStatus/",
+      "/itms/handleEditRoom/",
+      "/itms/handleItmsUpgraded/",
+      "/itms/handleItmsVersion/",
+      "/itms/handleServerConfig/",
+      "/itms/handleTestDiag/",
+      "/itms/handleTr069LogList/",
+      "/itms/handleTr069Poliey/",
+      "/itms/handleTr069TemplateList/",
+      "/itms/handleUploadFile/",
+      "/itms/handleUserAction/",
+      "/itms/handleVersionInfo/",
+      "/itms/handleWorkOrderList/"
+    ],
+    "core": []
+  },
+  "old_routes_not_used_by_old_web": [
+    "/itms/handleConnectOltUser/",
+    "/itms/handleCpeGroupInfo/",
+    "/itms/handleCurrentConfiguration/",
+    "/itms/handleDBAProfile/",
+    "/itms/handleDeviceDelete/",
+    "/itms/handleDeviceInfo/",
+    "/itms/handleDeviceStatus/",
+    "/itms/handleEditRoom/",
+    "/itms/handleItmsUpgraded/",
+    "/itms/handleItmsVersion/",
+    "/itms/handleLineProfile/",
+    "/itms/handleLinkAggregationInfo/",
+    "/itms/handleONTAutoFind/",
+    "/itms/handleONTAutoMatic/",
+    "/itms/handleONTListAndStatus/",
+    "/itms/handleONTRegisterProfile/",
+    "/itms/handleONTRegistration/",
+    "/itms/handleOltConfigAutoSave/",
+    "/itms/handleOltLogList/",
+    "/itms/handleOltSavedConfig/",
+    "/itms/handleOltTerminalUser/",
+    "/itms/handleRpcApiConfig/",
+    "/itms/handleServerConfig/",
+    "/itms/handleSrvProfile/",
+    "/itms/handleTestDiag/",
+    "/itms/handleTr069LogList/",
+    "/itms/handleTr069Poliey/",
+    "/itms/handleTr069Profile/",
+    "/itms/handleTr069TemplateList/",
+    "/itms/handleUploadFile/",
+    "/itms/handleUserAction/",
+    "/itms/handleVLANFunctionModule/",
+    "/itms/handleVersionInfo/",
+    "/itms/handleVlanClassifier/",
+    "/itms/handleVlanInformation/",
+    "/itms/handleWorkOrderList/",
+    "/itms/validateThirdToken/"
+  ],
+  "new_switch_routes_not_in_old_web": [],
+  "usage": {
+    "/itms/handleSwitchVenue/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleSwitchManufacturer/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleSwitchPurpose/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleSwitchProtocol/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleSwitchModel/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleSwitchInfo/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleDeviceInformation/": [
+      "switchweb/src/api.js"
+    ],
+    "/switchweb/api/encrypt-switch-credentials": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleSwitchSnifferConfig/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleSwitchCollectionSettings/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleRegistrationInfo/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleSwitchPortDetail/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleSwitchVlan/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleSwitchTerminal/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/getTerminalMAC/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleOltConnect/": [
+      "switchweb/src/api.js"
+    ],
+    "/itms/handleBoardAndSlotInfo/": [
+      "switchweb/src/api.js"
+    ],
+    "/client/fnRefreshDeviceInfo/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnGetAllParams/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnGetWanConnect/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnGetWifiInfo/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnGetSIPInfo/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnInfosSave/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnEditRoom/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnDeleteWANPath/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnSendWanPing/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnGetAdminInfo/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnSetAdminInfo/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnDeviceReboot/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnDeviceDelete/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnUpCpeGroup/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnLogDelete/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnDoTelnetInfo/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnDoQosInfo/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnDoSIPInfo/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnDoWANDelete/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnDeployWAN/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnTestDiag/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnFactoryReset/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnModeCfgSave/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnDownModeFile/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnImportTemplate/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnExportTemplate/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnGetBusinessModeList/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnWorkOrderSave/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnWorkOrderDelete/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnDoOrderInfo/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/fnServerSave/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ],
+    "/client/apiPolicySave/": [
+      "fusiongateway/web/assets/js/chunk-itmsApi.js"
+    ]
+  },
+  "records": [
+    {
+      "path": "/client/apiPolicySave/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnDeleteWANPath/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnDeployWAN/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnDeviceDelete/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnDeviceReboot/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnDoOrderInfo/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnDoQosInfo/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnDoSIPInfo/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnDoTelnetInfo/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnDoWANDelete/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnDownModeFile/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnEditRoom/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnExportTemplate/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnFactoryReset/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnGetAdminInfo/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnGetAllParams/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnGetBusinessModeList/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnGetSIPInfo/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnGetWanConnect/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnGetWifiInfo/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnImportTemplate/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnInfosSave/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnLogDelete/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnModeCfgSave/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnRefreshDeviceInfo/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnSendWanPing/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnServerSave/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnSetAdminInfo/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnTestDiag/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnUpCpeGroup/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnWorkOrderDelete/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/client/fnWorkOrderSave/",
+      "handler": "",
+      "comment": "(TR069/CPE 侧接口，由 Python /itms-py 提供)",
+      "module": "tr069",
+      "module_basis": "python:/itms-py/vTr69Api.py",
+      "source": "python:/itms-py/vTr69Api.py",
+      "in_old_web": true,
+      "old_web_owners": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ],
+      "in_new_switch": false,
+      "notes": [
+        "非 Go 路由：需确认迁入统一工程或保持独立服务"
+      ]
+    },
+    {
+      "path": "/itms/getTerminalMAC/",
+      "handler": "getTerminalMAC",
+      "comment": "(Switch)获取终端MAC接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleBoardAndSlotInfo/",
+      "handler": "handleBoardAndSlotInfo",
+      "comment": "初始板卡及插槽相关信息",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:板卡",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleConnectOltUser/",
+      "handler": "handleConnectOltUser",
+      "comment": "监听OLT连接用户信息",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:Olt",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleCpeGroupInfo/",
+      "handler": "handleCpeGroupInfo",
+      "comment": "分组功能模块",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "keyword:Cpe",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleCurrentConfiguration/",
+      "handler": "handleCurrentConfiguration",
+      "comment": "OLT当前配置信息",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:OLT",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleDBAProfile/",
+      "handler": "handleDBAProfile",
+      "comment": "DBA模版",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:DBA",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleDeviceDelete/",
+      "handler": "handleDeviceDelete",
+      "comment": "(TR069)删除设备或设备缓存",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "comment-prefix",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleDeviceInfo/",
+      "handler": "handleDeviceInfo",
+      "comment": "CPE设备信息接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "keyword:CPE",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleDeviceInformation/",
+      "handler": "handleDeviceInformation",
+      "comment": "设备信息接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleDeviceStatus/",
+      "handler": "handleDeviceStatus",
+      "comment": "设备状态接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "keyword:设备状态",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleEditRoom/",
+      "handler": "handleEditRoom",
+      "comment": "(TR069)修改房间号",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "comment-prefix",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleItmsUpgraded/",
+      "handler": "handleItmsUpgraded",
+      "comment": "(ITMS)在线升级",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "comment-prefix",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleItmsVersion/",
+      "handler": "handleItmsVersion",
+      "comment": "(ITMS)获取版本信息",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "comment-prefix",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleLineProfile/",
+      "handler": "handleLineProfile",
+      "comment": "ONT线路模版",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:ONT",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleLinkAggregationInfo/",
+      "handler": "handleLinkAggregationInfo",
+      "comment": "端口汇聚功能",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:汇聚",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleONTAutoFind/",
+      "handler": "handleONTAutoFind",
+      "comment": "查找发现新的ONT设备",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:ONT",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleONTAutoMatic/",
+      "handler": "handleONTAutoMatic",
+      "comment": "ONT自动注册配置",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:ONT",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleONTListAndStatus/",
+      "handler": "handleONTListAndStatus",
+      "comment": "ONT配置/状态",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:ONT",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleONTRegisterProfile/",
+      "handler": "handleONTRegisterProfile",
+      "comment": "ONT注册模板",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:ONT",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleONTRegistration/",
+      "handler": "handleONTRegistration",
+      "comment": "ONT一键注册",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:ONT",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleOltConfigAutoSave/",
+      "handler": "handleOltConfigAutoSave",
+      "comment": "(OLT)OLT配置自动保存",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "comment-prefix",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleOltConnect/",
+      "handler": "handleOltConnect",
+      "comment": "初始化OLT相关信息",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:Olt",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleOltLogList/",
+      "handler": "handleOltLogList",
+      "comment": "渲染OLT日志列表",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:Olt",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleOltSavedConfig/",
+      "handler": "handleOltSavedConfig",
+      "comment": "(OLT)OLT保存配置",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "comment-prefix",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleOltTerminalUser/",
+      "handler": "handleOltTerminalUser",
+      "comment": "处理OLT登录用户",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:Olt",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleRpcApiConfig/",
+      "handler": "handleRpcApiConfig",
+      "comment": "RPC-API接口设置",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleServerConfig/",
+      "handler": "handleServerConfig",
+      "comment": "参数设置操作",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "keyword:参数",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSrvProfile/",
+      "handler": "handleSrvProfile",
+      "comment": "ONT业务模板(服务模板)",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "keyword:ONT",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchCollectionSettings/",
+      "handler": "handleSwitchCollectionSettings",
+      "comment": "(Switch)交换机接口采集配置接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchInfo/",
+      "handler": "handleSwitchInfo",
+      "comment": "(Switch)交换机设备信息功能接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchManufacturer/",
+      "handler": "handleSwitchManufacturer",
+      "comment": "(Switch)制造商功能接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchModel/",
+      "handler": "handleSwitchModel",
+      "comment": "(Switch)交换机型号功能接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchPortDetail/",
+      "handler": "handleSwitchPortDetail",
+      "comment": "(Switch)端口详情与操作接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchProtocol/",
+      "handler": "handleSwitchProtocol",
+      "comment": "(Switch)协议功能接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchPurpose/",
+      "handler": "handleSwitchPurpose",
+      "comment": "(Switch)交换机用途功能接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchSnifferConfig/",
+      "handler": "handleSwitchSnifferConfig",
+      "comment": "(Switch)交换机在线嗅探配置接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchTerminal/",
+      "handler": "handleSwitchTerminal",
+      "comment": "(Switch)SSH终端交互",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchVenue/",
+      "handler": "handleSwitchVenue",
+      "comment": "(Switch)场景功能接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleSwitchVlan/",
+      "handler": "handleSwitchVlan",
+      "comment": "(Switch)VLAN配置功能接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": true,
+      "old_web_owners": [
+        "switchweb/src/api.js"
+      ],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleTestDiag/",
+      "handler": "handleTestDiag",
+      "comment": "诊断测试",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "explicit(handler 文件)",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleTr069LogList/",
+      "handler": "handleTr069LogList",
+      "comment": "渲染TR069日志列表",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "keyword:Tr069",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleTr069Poliey/",
+      "handler": "handleTr069Poliey",
+      "comment": "策略功能模块",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "keyword:Tr069",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleTr069Profile/",
+      "handler": "handleTr069Profile",
+      "comment": "TR069管理模板",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "explicit(handler 文件)",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleTr069TemplateList/",
+      "handler": "handleTr069TemplateList",
+      "comment": "配置模版",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "keyword:Tr069",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleUploadFile/",
+      "handler": "handleUploadFile",
+      "comment": "(TR069)文件导入",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "comment-prefix",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleUserAction/",
+      "handler": "handleUserAction",
+      "comment": "监听用户操作",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "keyword:用户操作",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleVLANFunctionModule/",
+      "handler": "handleVLANFunctionModule",
+      "comment": "VLAN功能模块",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "olt",
+      "module_basis": "explicit(handler 文件)",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleVersionInfo/",
+      "handler": "handleVersionInfo",
+      "comment": "(TR069)获取所有硬件版本,固件版本信息",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "comment-prefix",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleVlanClassifier/",
+      "handler": "handleVlanClassifier",
+      "comment": "VLAN分类接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleVlanInformation/",
+      "handler": "handleVlanInformation",
+      "comment": "VLAN信息接口",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": true,
+      "notes": []
+    },
+    {
+      "path": "/itms/handleWorkOrderList/",
+      "handler": "handleWorkOrderList",
+      "comment": "工单操作",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "tr069",
+      "module_basis": "keyword:工单",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": false,
+      "notes": []
+    },
+    {
+      "path": "/itms/validateThirdToken/",
+      "handler": "handleValidateThirdToken",
+      "comment": "第三方登录令牌验证",
+      "source": "/switchProject/switchmain/main.go",
+      "module": "switch",
+      "module_basis": "switchapi",
+      "in_old_web": false,
+      "old_web_owners": [],
+      "in_new_switch": true,
+      "notes": []
+    }
+  ]
+}

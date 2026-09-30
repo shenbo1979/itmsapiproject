@@ -1,0 +1,9 @@
+{
+  "name": "txapi-domcheck",
+  "private": true,
+  "type": "module",
+  "description": "真实 DOM（jsdom）校验用；仅本项目工具使用，不影响 web/ 的无依赖基线",
+  "dependencies": {
+    "jsdom": "^30.1.1"
+  }
+}

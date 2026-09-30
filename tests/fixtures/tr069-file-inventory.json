@@ -1,0 +1,199 @@
+{
+  "root": "/home/tr069file",
+  "tr069_entries": [
+    {
+      "relpath": "ZNXT64BD7A98.json",
+      "size": 44,
+      "mtime": 1788248644,
+      "kind": "json",
+      "top_keys": [
+        "code",
+        "data",
+        "message"
+      ],
+      "top_key_count": 3
+    },
+    {
+      "relpath": "DeviceSummary/ZNXT64BD7A98.json",
+      "size": 503,
+      "mtime": 1790044574,
+      "kind": "json",
+      "top_keys": [
+        "Cookie",
+        "Manufacturer",
+        "OUI",
+        "ProductClass",
+        "SerialNumber",
+        "EventCode",
+        "DeviceSummary",
+        "SpecVersion"
+      ],
+      "top_key_count": 15
+    },
+    {
+      "relpath": "cpegroup/",
+      "kind": "dir",
+      "size": 0
+    },
+    {
+      "relpath": "Parameters/ZNXT64BD7A98.json",
+      "size": 308025,
+      "mtime": 1790044582,
+      "kind": "json",
+      "top_keys": [
+        "Cookie",
+        "SerialNumber",
+        "Parameters"
+      ],
+      "top_key_count": 3,
+      "parameter_count": 2266,
+      "parameter_samples": [
+        "InternetGatewayDevice.Capabilities.PerformanceDiagnostic.DownloadTransports",
+        "InternetGatewayDevice.Capabilities.PerformanceDiagnostic.UploadTransports",
+        "InternetGatewayDevice.DeviceConfig.ConfigFile"
+      ],
+      "parameter_value_types": {
+        "str": 2266
+      }
+    },
+    {
+      "relpath": "tr069dofile/ZNXT64BD7A98.json",
+      "size": 40,
+      "mtime": 1788248702,
+      "kind": "json",
+      "top_keys": [
+        "code",
+        "data",
+        "message"
+      ],
+      "top_key_count": 3
+    },
+    {
+      "relpath": "templatefile/templatefile.json",
+      "size": 3064,
+      "mtime": 1789368908,
+      "kind": "json",
+      "top_keys": [
+        "LAN-100",
+        "PPPOE上网",
+        "会客室-INTERNET",
+        "会客室-IPPBX",
+        "会客室-WiFi_5G",
+        "会客室-语音",
+        "会客室WIFI_2.4G",
+        "开启WIFI"
+      ],
+      "top_key_count": 10
+    },
+    {
+      "relpath": "tr69serverinfo/tr69serverinfo.json",
+      "size": 158,
+      "mtime": 1785832249,
+      "kind": "json",
+      "top_keys": [
+        "szHost",
+        "szPort",
+        "nPeriodicInformInterval",
+        "szUsername",
+        "szPassword",
+        "nServiceEnable"
+      ],
+      "top_key_count": 6
+    },
+    {
+      "relpath": "tr069specialfield/ZNXT64BD7A98.json",
+      "size": 482,
+      "mtime": 1790044582,
+      "kind": "json",
+      "top_keys": [
+        "ServiceList",
+        "IPMode",
+        "LanList",
+        "Wifi2List",
+        "Wifi5list",
+        "VLANMode",
+        "VLANIDMark",
+        "DevIsp"
+      ],
+      "top_key_count": 11
+    }
+  ],
+  "total_bytes": 312316,
+  "extra_paths": [
+    {
+      "path": "/opt/itmsapikey",
+      "exists": true,
+      "kind": "dir",
+      "files": [
+        {
+          "name": "itmsapikey.key",
+          "size": 188
+        },
+        {
+          "name": "registration.state",
+          "size": 282
+        }
+      ]
+    },
+    {
+      "path": "/txapikeygen",
+      "exists": true,
+      "kind": "dir",
+      "files": [
+        {
+          "name": ".gitignore",
+          "size": 76
+        },
+        {
+          "name": ".registration-secret",
+          "size": 49
+        },
+        {
+          "name": ".registration-secret.state",
+          "size": 49
+        },
+        {
+          "name": "README.md",
+          "size": 3040
+        },
+        {
+          "name": "package.json",
+          "size": 243
+        },
+        {
+          "name": "server.js",
+          "size": 18209
+        },
+        {
+          "name": "server.test.js",
+          "size": 3891
+        }
+      ]
+    },
+    {
+      "path": "/dev/shm/verify_info.json",
+      "exists": true,
+      "kind": "file",
+      "size": 678,
+      "top_keys": [
+        "AuthExpire",
+        "CloudVhost",
+        "CloudVkey",
+        "Desc",
+        "HostID",
+        "IPPBX",
+        "IPTV",
+        "IdKey",
+        "IsOffLine",
+        "ModelName",
+        "Name",
+        "RegistTime",
+        "ServiceExpire",
+        "State",
+        "TR069",
+        "ThirdInterface",
+        "VNAAS"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4203 @@
+:root {
+  --bg: #f4efe5;
+  --bg-accent: #efe0be;
+  --panel: rgba(255, 251, 245, 0.9);
+  --panel-strong: #fff8ef;
+  --ink: #000000;
+  --muted: #000000;
+  --line: rgba(23, 34, 47, 0.12);
+  --teal: #0b6e69;
+  --amber: #c76b19;
+  --rose: #a53f3f;
+  --shadow: 0 20px 60px rgba(28, 37, 47, 0.12);
+  --radius: 5px;
+  --radius-sm: 5px;
+  --font-ui: "Avenir Next", "Segoe UI", "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Georgia", "Times New Roman", "Songti SC", "STZhongsong", "SimSun", "Noto Serif CJK SC", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-ui);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background:
+    radial-gradient(circle at top left, rgba(11, 110, 105, 0.13), transparent 30%),
+    radial-gradient(circle at right 15%, rgba(199, 107, 25, 0.18), transparent 22%),
+    linear-gradient(180deg, #fff9ef 0%, var(--bg) 44%, #ece3d4 100%);
+}
+
+body.is-busy::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(244, 239, 229, 0.38);
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100vh;
+  padding: 28px 24px;
+  border-right: 1px solid var(--line);
+  /*
+   * 不使用 backdrop-filter：只要祖先元素带 backdrop-filter，浏览器就会把其中的文字
+   * 放入合成层并强制使用灰度抗锯齿（无法使用亚像素渲染），文字会明显发虚。
+   * 这里改用不透明背景近似原来的毛玻璃观感。
+   */
+  background:
+    radial-gradient(circle at 0 0, rgba(11, 110, 105, 0.08), transparent 42%),
+    linear-gradient(180deg, #fffdf9, #fdf5ea);
+}
+
+.brand {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background:
+    linear-gradient(135deg, rgba(11, 110, 105, 0.92), rgba(23, 34, 47, 0.94)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent);
+  color: #fef5e8;
+  box-shadow: var(--shadow);
+}
+
+.brand__copy {
+  min-width: 0;
+}
+
+.brand__eyebrow,
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.82;
+}
+
+.brand h1,
+.hero h2 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  line-height: 1.1;
+}
+
+.brand p,
+.hero p,
+.panel__header p {
+  margin: 0;
+  color: inherit;
+  opacity: 0.88;
+}
+
+.nav {
+  display: grid;
+  gap: 10px;
+}
+
+.thirdtoken-form {
+  display: grid;
+  gap: 8px;
+}
+
+.thirdtoken-form label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.thirdtoken-form input {
+  min-width: 0;
+  width: 100%;
+}
+
+.nav a {
+  padding: 12px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.45);
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.nav a:hover {
+  transform: translateX(4px);
+  background: rgba(11, 110, 105, 0.12);
+  color: var(--ink);
+}
+
+.button {
+  border: 0;
+  border-radius: 5px;
+  padding: 6px 8px;
+  background: #1d2d3b;
+  color: #fff8ef;
+  cursor: pointer;
+  transition: transform 180ms ease, opacity 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 10px 24px rgba(23, 34, 47, 0.14);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+.button--primary {
+  background: linear-gradient(135deg, var(--amber), #dc8e3d);
+  color: #fffaf2;
+}
+
+.button--full {
+  width: 100%;
+}
+
+.button--table {
+  padding: 8px 14px;
+  box-shadow: none;
+}
+
+.button--busy,
+.button:disabled {
+  opacity: 0.92;
+  cursor: wait;
+}
+
+.button--danger {
+  background: linear-gradient(135deg, #8f2f2f, #bb4d4d);
+}
+
+.content {
+  padding: 8px;
+  display: grid;
+  gap: 12px;
+}
+
+.hero,
+.panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+  gap: 24px;
+  padding: 32px;
+}
+
+.hero h2 {
+  font-size: clamp(32px, 4vw, 52px);
+}
+
+.hero__mesh {
+  min-height: 220px;
+  border-radius: 5px;
+  background:
+    linear-gradient(160deg, rgba(11, 110, 105, 0.95), rgba(19, 34, 47, 0.98)),
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12), transparent 25%);
+  mask-image:
+    radial-gradient(circle at 30% 32%, black 0 12%, transparent 13%),
+    linear-gradient(90deg, black, black);
+  position: relative;
+}
+
+.hero__mesh::before,
+.hero__mesh::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+}
+
+.hero__mesh::after {
+  inset: 36px;
+  border-style: dashed;
+}
+
+.panel {
+  padding: 24px;
+}
+
+.panel__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.panel__header h3,
+.subpanel h4 {
+  margin: 0 0 8px;
+}
+
+.metric-grid,
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.metric-card {
+  padding: 18px;
+  border-radius: 5px;
+  color: #fff9ef;
+  min-height: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #20313f;
+}
+
+.metric-card strong {
+  font-family: var(--font-display);
+  font-size: 40px;
+}
+
+.metric-card--amber {
+  background: linear-gradient(135deg, #a85018, #d88936);
+}
+
+.metric-card--teal {
+  background: linear-gradient(135deg, #0f5d63, #1a8a83);
+}
+
+.metric-card--rose {
+  background: linear-gradient(135deg, #7f3240, #b55663);
+}
+
+.metric-card--ink {
+  background: linear-gradient(135deg, #1d2a39, #304863);
+}
+
+.grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stack {
+  display: grid;
+  gap: 18px;
+}
+
+.subpanel {
+  padding: 18px;
+  border-radius: 5px;
+  border: 1px solid rgba(23, 34, 47, 0.08);
+  background: var(--panel-strong);
+}
+
+.form-grid,
+.inline-form {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-grid--wide {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.device-form-modal[hidden] { display: none; }
+
+.device-form-modal {
+  position: fixed;
+  z-index: 45;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.device-form-dialog {
+  width: min(720px, 100%);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: var(--panel-strong);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.device-form-dialog__header,
+.device-form-dialog__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+}
+
+.device-form-dialog__header { border-bottom: 1px solid var(--line); }
+.device-form-dialog__header h3 { margin: 0; font-size: 18px; }
+
+.device-form-dialog__body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 18px;
+}
+
+.device-form-dialog__body label {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.device-form-dialog__body label span {
+  text-align: right;
+}
+
+/* label 默认 display:grid 会覆盖 [hidden]（三层接口弹窗里被隐藏的 Fsp / VLAN 类型仍会显示）。
+   显式补回 display:none，保证 setVLANRowVisible 隐藏的字段在弹窗内真正不出现。 */
+.device-form-dialog__body label[hidden] {
+  display: none;
+}
+
+/* VLAN / 终端用户 / DBA 新增弹窗：字段排成一列、一行一个参数。
+   VLAN 弹窗复用终端用户弹窗的同款单列布局，不再使用 .device-form-dialog__body 默认两列；
+   DBA 弹窗同口径：所有字段一律单列（模板ID/模板名/DBA类型/带宽各占一行），避免并排错乱。 */
+#olt-vlan-form,
+#olt-terminal-form,
+#olt-dba-form,
+#olt-line-form,
+#olt-srv-form {
+  grid-template-columns: 1fr;
+}
+
+/* 上行透传 F/S/P 行：标签文案较长（机框/槽位/端口(F/S/P)：），
+   默认 label 的 76px 标签列会把它截断/与输入框重叠。
+   方案：给 VLAN 表单内所有 label 一个统一的、足够容纳 F/S/P 文案的标签列宽（150px），
+   配合默认 span { text-align: right }，使「VLAN ID：」与「机框/槽位/端口(F/S/P)：」
+   的右边缘对齐，输入框也从同一列起点开始。 */
+#olt-vlan-form label {
+  grid-template-columns: 150px minmax(0, 1fr);
+}
+#olt-vlan-fsp-row span {
+  white-space: normal;
+}
+
+/* DBA 新增弹窗：带宽字段标签较长（固定/保证/最大带宽(kbps)：）。
+   默认 label 76px 标签列 + nowrap 会把这类文案截断/与输入框重叠（描述文字被编辑框盖住）。
+   与 VLAN 弹窗同方案：放宽标签列到 150px 并允许折行，配合 span { text-align: right }
+   让各标签右边缘对齐、输入框从统一列起点开始、描述文字不被遮挡。 */
+#olt-dba-form label {
+  grid-template-columns: 150px minmax(0, 1fr);
+}
+#olt-dba-form label span {
+  white-space: normal;
+}
+
+/* ONT 线路模板弹窗：与 DBA 弹窗同方案，标签列放宽到 150px 并允许折行，
+   容纳「绑定DBA模板：」/「VLAN列表：」等较长文案（配合单列布局 #olt-line-form 1fr）。 */
+#olt-line-form label {
+  grid-template-columns: 150px minmax(0, 1fr);
+}
+#olt-line-form label span {
+  white-space: normal;
+}
+
+/* TR069 复选框：默认勾选，横向排列于标签右侧。 */
+.olt-line-check-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.olt-line-check-wrap input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--teal);
+  cursor: pointer;
+}
+.olt-line-check-label {
+  text-align: left;
+}
+
+/* 字段帮助说明（DBA 空提示 / TR069 说明），与 VLAN 提示同款灰字小号。 */
+.olt-line-field-hint {
+  margin-top: -4px;
+  margin-left: 158px;
+  color: var(--muted, #909399);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.olt-line-field-hint[hidden] {
+  display: none;
+}
+
+.device-form-dialog__body input,
+.device-form-dialog__body select {
+  padding: 5px 5px;
+  border-radius: 5px;
+}
+
+/* 登录密码明/暗文切换：输入框外包一层 flex，右侧内嵌切换按钮（不改变 grid 布局）。 */
+.olt-pass-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.olt-pass-wrap input {
+  width: 100%;
+  padding-right: 32px;
+}
+
+.olt-pass-toggle {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.olt-pass-toggle:hover {
+  background: rgba(23, 34, 47, 0.06);
+  color: var(--ink);
+}
+
+.device-form-dialog__actions {
+  grid-column: 1 / -1;
+  justify-content: flex-end;
+  margin: 0 -18px -18px;
+  border-top: 1px solid var(--line);
+}
+
+.settings-dialog-backdrop {
+  position: fixed;
+  z-index: 90;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.settings-dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(720px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: var(--panel-strong);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+}
+
+.settings-dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex: 0 0 auto;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.settings-dialog__header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.settings-dialog__body {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.settings-dialog__loading,
+.settings-dialog__load-error {
+  min-height: 260px;
+}
+
+.settings-dialog__load-error {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  padding: 24px;
+  color: var(--rose);
+  text-align: center;
+}
+
+.settings-dialog__load-error span {
+  max-width: 520px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.settings-dialog__error {
+  margin: 16px 18px 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(165, 63, 63, 0.24);
+  border-radius: 5px;
+  background: rgba(165, 63, 63, 0.08);
+  color: var(--rose);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.registration-dialog-backdrop {
+  position: fixed;
+  z-index: 92;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.registration-dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(760px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: var(--panel-strong);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+}
+
+.registration-dialog__header,
+.registration-dialog__header > div,
+.registration-form__actions {
+  display: flex;
+  align-items: center;
+}
+
+.registration-dialog__header {
+  justify-content: space-between;
+  gap: 12px;
+  flex: 0 0 auto;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.registration-dialog__header > div {
+  min-width: 0;
+  gap: 10px;
+}
+
+.registration-dialog__header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.registration-form {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.registration-expiration {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 18px 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(11, 110, 105, 0.2);
+  border-radius: 5px;
+  background: rgba(11, 110, 105, 0.07);
+  font-size: 12px;
+}
+
+.registration-expiration span,
+.registration-expiration small {
+  color: var(--muted);
+}
+
+.registration-expiration.is-expired {
+  border-color: rgba(165, 63, 63, 0.28);
+  background: rgba(165, 63, 63, 0.08);
+  color: var(--rose);
+}
+
+.registration-form__hint {
+  margin: 12px 18px 0;
+  padding: 8px 10px;
+  border: 1px dashed rgba(11, 110, 105, 0.28);
+  border-radius: 5px;
+  background: rgba(11, 110, 105, 0.06);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.registration-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 18px;
+  border: 0;
+}
+
+.registration-form__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.registration-form .settings-field input[readonly] {
+  color: var(--muted);
+  background: rgba(23, 34, 47, 0.05);
+  cursor: default;
+}
+
+.registration-input-action {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+}
+
+.registration-input-action .button {
+  min-width: 72px;
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
+.registration-form__actions {
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 18px -18px -18px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--line);
+}
+
+.settings-form + .settings-form {
+  border-top: 1px solid var(--line);
+}
+
+.settings-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 18px;
+  border: 0;
+}
+
+.settings-form__header,
+.settings-form__header > div,
+.settings-form__actions {
+  display: flex;
+  align-items: center;
+}
+
+.settings-form__header {
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.settings-form__header > div {
+  min-width: 0;
+  gap: 10px;
+}
+
+.settings-form__header h4 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.settings-status {
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: rgba(165, 63, 63, 0.1);
+  color: var(--rose);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.settings-status.is-enabled {
+  background: rgba(11, 110, 105, 0.11);
+  color: var(--teal);
+}
+
+.settings-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.settings-toggle input {
+  position: relative;
+  width: 38px;
+  height: 22px;
+  margin: 0;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #aeb5ba;
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+
+.settings-toggle input::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(23, 34, 47, 0.28);
+  transition: transform 160ms ease;
+}
+
+.settings-toggle input:checked {
+  background: var(--teal);
+}
+
+.settings-toggle input:checked::before {
+  transform: translateX(16px);
+}
+
+.settings-toggle input:focus-visible {
+  outline: 2px solid rgba(11, 110, 105, 0.32);
+  outline-offset: 2px;
+}
+
+.settings-form__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.settings-field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.settings-field[hidden] {
+  display: none;
+}
+
+.settings-field--wide {
+  grid-column: 1 / -1;
+}
+
+.settings-field input,
+.settings-field textarea {
+  padding: 9px 10px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.settings-field textarea {
+  width: 100%;
+  min-height: 62px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font: inherit;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.settings-field textarea:focus {
+  outline: 2px solid rgba(11, 110, 105, 0.24);
+  border-color: rgba(11, 110, 105, 0.36);
+}
+
+.settings-segmented {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(360px, 100%);
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: rgba(23, 34, 47, 0.05);
+}
+
+.settings-segmented label {
+  position: relative;
+  cursor: pointer;
+}
+
+.settings-segmented input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.settings-segmented span {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.settings-segmented input:checked + span {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 1px 4px rgba(23, 34, 47, 0.14);
+}
+
+.settings-segmented input:focus-visible + span {
+  outline: 2px solid rgba(11, 110, 105, 0.32);
+}
+
+.settings-form__actions {
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.settings-form fieldset:disabled {
+  opacity: 0.7;
+}
+
+.inline-form {
+  grid-template-columns: 1fr auto;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 5px;
+  border: 1px solid rgba(23, 34, 47, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid rgba(11, 110, 105, 0.24);
+  border-color: rgba(11, 110, 105, 0.36);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(23, 34, 47, 0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.device-row--offline td {
+  color: var(--rose);
+}
+
+.device-row--online td {
+  color: var(--ink);
+}
+
+.device-online-status {
+  display: block;
+  margin-top: 3px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.device-online-status--offline {
+  color: var(--rose);
+}
+
+.compact th,
+.compact td {
+  padding: 9px 8px;
+}
+
+.table-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+.detail-tile {
+  padding: 14px;
+  border-radius: 5px;
+  background: rgba(11, 110, 105, 0.06);
+  border: 1px solid rgba(11, 110, 105, 0.1);
+}
+
+.detail-tile span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.detail-tile strong {
+  font-size: 20px;
+}
+
+.empty-state,
+.code-block {
+  padding: 18px;
+  border-radius: 5px;
+  background: rgba(23, 34, 47, 0.05);
+  color: var(--muted);
+}
+
+.code-block {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  display: grid;
+  gap: 8px;
+}
+
+.notices {
+  display: grid;
+  gap: 10px;
+}
+
+.notice {
+  padding: 14px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid rgba(23, 34, 47, 0.08);
+}
+
+.notice span {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.notice--success {
+  border-color: rgba(11, 110, 105, 0.22);
+}
+
+.notice--error {
+  border-color: rgba(165, 63, 63, 0.24);
+}
+
+.notice--info {
+  border-color: rgba(11, 110, 105, 0.2);
+  background: rgba(235, 247, 246, 0.82);
+}
+
+.notice p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.device-subrow td {
+  padding: 0;
+  border-bottom: 1px solid rgba(23, 34, 47, 0.08);
+}
+
+.device-monitor {
+  margin: 0 0 10px;
+  padding: 10px;
+  border: 1px solid rgba(23, 34, 47, 0.1);
+  border-radius: 5px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(244, 250, 248, 0.76));
+}
+
+/* ── device-monitor 的子样式（加载态 / 头部，供 OLT 连接结果与交换机读取本地面板复用）── */
+.device-monitor--loading {
+  background: rgba(11, 110, 105, 0.08);
+  border: 1px solid rgba(11, 110, 105, 0.12);
+}
+
+.device-monitor__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.device-monitor__header strong,
+.device-monitor__header .olt-connect-head {
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.device-monitor__hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(23, 34, 47, 0.1);
+}
+
+.device-monitor__eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.device-monitor__hero strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+
+.device-monitor__hero p,
+.device-monitor__status,
+.device-facts,
+.device-health-card small {
+  color: var(--muted);
+}
+
+.device-monitor__hero p {
+  margin: 5px 0 0;
+  font-size: 13px;
+}
+
+.device-monitor__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.device-monitor__status i {
+  width: 9px;
+  height: 9px;
+  border-radius: 5px;
+  background: var(--teal);
+  box-shadow: 0 0 0 4px rgba(11, 110, 105, 0.12);
+}
+
+.device-monitor__status--offline {
+  color: var(--rose);
+}
+
+.device-monitor__status--offline i {
+  background: var(--rose);
+  box-shadow: 0 0 0 4px rgba(194, 71, 82, 0.12);
+}
+
+.device-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  padding: 14px 0;
+  font-size: 13px;
+}
+
+.device-facts span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.device-facts small,
+.device-health-card > span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.device-health-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.device-health-card {
+  min-height: 98px;
+  padding: 10px;
+  border: 1px solid rgba(23, 34, 47, 0.09);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.device-health-card strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.device-health-card--temperature {
+  min-width: 0;
+}
+
+.device-health-card--fan {
+  min-width: 0;
+}
+
+.device-health-card--cpu {
+  display: grid;
+  justify-items: center;
+}
+
+.device-health-card--cpu > span {
+  justify-self: start;
+  width: 100%;
+}
+
+.device-cpu-chart {
+  width: min(100%, 160px);
+  height: auto;
+}
+
+.device-cpu-chart__remaining {
+  fill: #dbe9e5;
+}
+
+.device-cpu-chart__used {
+  fill: #0b6e69;
+}
+
+.device-cpu-chart__center {
+  fill: rgba(255, 255, 255, 0.96);
+}
+
+.device-cpu-chart text {
+  fill: #0b6e69;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.device-cpu-chart__empty {
+  display: grid;
+  place-items: center;
+  min-height: 96px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.device-temperature-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.device-temperature-chart__axis-line {
+  stroke: #aeb7bd;
+  stroke-width: 1;
+}
+
+.device-temperature-chart__grid {
+  stroke: #e7ebed;
+  stroke-width: 1;
+}
+
+.device-temperature-chart__column {
+  fill: #e6dd16;
+}
+
+.device-fan-chart__column {
+  fill: rgb(32, 207, 107);
+}
+
+.device-temperature-chart__value,
+.device-temperature-chart__label,
+.device-temperature-chart__tick {
+  fill: #53616a;
+  font-family: var(--font-ui);
+  font-size: 8px;
+  text-anchor: middle;
+}
+
+.device-temperature-chart__value {
+  fill: #b24d45;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.device-fan-chart__value {
+  fill: rgb(22, 150, 75);
+}
+
+.device-fan-status {
+  min-height: 150px;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.device-fan-status__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 43px;
+  padding: 7px 2px;
+  border-bottom: 1px solid rgba(23, 34, 47, 0.08);
+}
+
+.device-fan-status__row:last-child {
+  border-bottom: 0;
+}
+
+.device-fan-status__row > span {
+  min-width: 0;
+}
+
+.device-fan-status__row strong,
+.device-fan-status__row small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.device-fan-status__row strong {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+.device-fan-status__row small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.device-fan-status__badge {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.device-fan-status__badge.is-ok {
+  color: #16854a;
+}
+
+.device-fan-status__badge.is-fault {
+  color: var(--rose);
+}
+
+.device-temperature-chart__label {
+  font-size: 7px;
+}
+
+.device-temperature-chart__empty {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.device-health-card em {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-style: normal;
+  color: var(--teal);
+}
+
+.device-health-card__bar {
+  height: 5px;
+  margin-top: 15px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: rgba(23, 34, 47, 0.1);
+}
+
+.device-health-card__bar i {
+  display: block;
+  width: var(--level);
+  height: 100%;
+  border-radius: 5px;
+  background: var(--teal);
+}
+
+.device-health-card:nth-child(2) .device-health-card__bar i {
+  background: var(--amber);
+}
+
+.device-health-card:nth-child(3) .device-health-card__bar i {
+  background: #5272a3;
+}
+
+.status-legend {
+  display: flex;
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.status-legend i {
+  width: 22px;
+  height: 5px;
+  border-radius: 5px;
+}
+
+.status-legend__up {
+  background: var(--teal);
+}
+
+.status-legend__down {
+  background: #8a929c;
+}
+
+.status-legend__unknown {
+  background: var(--rose);
+}
+
+.device-card-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.device-panel-ports {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(42px, 1fr));
+  gap: 8px 5px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid rgba(23, 34, 47, 0.14);
+  border-radius: 5px;
+  background: #263440;
+}
+
+.device-panel-port-pair {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  gap: 7px;
+  min-width: 0;
+}
+
+.device-panel-port--empty {
+  min-height: 58px;
+}
+
+.device-panel-port {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  min-width: 0;
+  padding: 2px 1px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #dce7ec;
+  cursor: pointer;
+}
+
+.device-panel-port__number,
+.device-panel-port__speed {
+  width: 100%;
+  overflow: hidden;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.device-panel-port__number {
+  font-weight: 700;
+}
+
+.device-panel-port__speed {
+  color: rgba(220, 231, 236, 0.64);
+  font-size: 9px;
+}
+
+.device-panel-port__socket {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  width: 36px;
+  height: 22px;
+  padding: 5px 4px 4px;
+  border: 2px solid #7d8992;
+  border-radius: 5px;
+  background: #111b23;
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.08);
+}
+
+.device-panel-port__socket i {
+  height: 100%;
+  background: #59646c;
+}
+
+.device-panel-port--up .device-panel-port__socket {
+  border-color: #29b5a9;
+  box-shadow: 0 0 0 2px rgba(41, 181, 169, 0.16), inset 0 3px 0 rgba(255, 255, 255, 0.12);
+}
+
+.device-panel-port--up .device-panel-port__socket i {
+  background: #45d5bd;
+}
+
+.device-panel-port--unknown .device-panel-port__socket {
+  border-color: #dc6b65;
+}
+
+.device-panel-port--unknown .device-panel-port__socket i {
+  background: #dc6b65;
+}
+
+.device-panel-port--closed .device-panel-port__socket {
+  border-color: #dc6b65;
+  background: #361f25;
+}
+
+.device-panel-port--closed .device-panel-port__socket i {
+  background: #dc6b65;
+}
+
+.device-panel-port__socket--optical {
+  grid-template-columns: 1fr;
+  place-items: center;
+  padding: 3px;
+}
+
+.device-panel-port__socket--optical i {
+  display: none;
+}
+
+.device-panel-port__socket--optical i:first-child {
+  display: block;
+  width: 11px;
+  height: 11px;
+  transform: rotate(45deg);
+}
+
+.device-panel-port__socket--aggregation {
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+
+.device-panel-port__socket--aggregation i {
+  display: none;
+}
+
+.device-panel-port__socket--aggregation i:first-child {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 5px;
+}
+
+.device-panel-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 2px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.device-panel-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.device-panel-legend i {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.device-panel-legend__medium {
+  width: 12px;
+  height: 8px;
+  border: 2px solid #66727c;
+  border-radius: 5px;
+}
+
+.device-panel-legend__medium--optical {
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
+}
+
+.device-panel-legend__medium--aggregation {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.device-panel-legend__state {
+  width: 9px;
+  height: 9px;
+  border-radius: 5px;
+}
+
+.device-panel-legend__state--up {
+  background: #29b5a9;
+}
+
+.device-panel-legend__state--down {
+  background: #7d8992;
+}
+
+.device-panel-legend__state--closed {
+  background: #dc6b65;
+}
+
+.device-panel-port:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.device-panel-port:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.device-panel-port:hover .port-tooltip,
+.device-panel-port:focus-visible .port-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.device-port-card {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+  border: 1px solid rgba(23, 34, 47, 0.08);
+  background: rgba(255, 255, 255, 0.78);
+  text-align: center;
+}
+
+.device-port-card--up {
+  border-color: rgba(11, 110, 105, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(11, 110, 105, 0.04);
+}
+
+.device-port-card--down {
+  border-color: rgba(94, 102, 114, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(94, 102, 114, 0.04);
+}
+
+.device-port-card--unknown {
+  border-color: rgba(165, 63, 63, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(165, 63, 63, 0.04);
+}
+
+.device-port-card__port {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 2px 2px;
+}
+
+.device-port-card__port strong {
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.device-port-card__port small {
+  min-height: 16px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.port-mark {
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+}
+
+.port-mark-wrap {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.port-mark-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.port-mark-button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 4px;
+  border-radius: 5px;
+}
+
+.port-mark svg {
+  width: 60px;
+  height: 60px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.port-mark svg rect {
+  fill: currentColor;
+  opacity: 0.12;
+}
+
+.port-mark svg path {
+  fill: currentColor;
+  stroke: none;
+}
+
+.device-port-card--up .port-mark {
+  color: #0b6e69;
+}
+
+.device-port-card--down .port-mark {
+  color: #5e6672;
+}
+
+.device-port-card--unknown .port-mark {
+  color: #a53f3f;
+}
+
+.port-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  z-index: 6;
+  width: max-content;
+  max-width: min(360px, calc(100vw - 24px));
+  padding: 10px 12px;
+  border-radius: 5px;
+  background: rgba(23, 34, 47, 0.96);
+  color: #fff8ef;
+  box-shadow: 0 12px 28px rgba(23, 34, 47, 0.24);
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.port-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 10px;
+  height: 10px;
+  background: rgba(23, 34, 47, 0.96);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.port-tooltip span {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.port-tooltip strong {
+  color: rgba(255, 248, 239, 0.72);
+  font-weight: 400;
+  justify-self: start;
+  text-align: left;
+}
+
+.port-mark-wrap:hover .port-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Keep first-column tooltips inside the device panel instead of under the sidebar. */
+.device-port-card:nth-child(12n + 1) .port-tooltip {
+  left: 0;
+  transform: translateX(0) translateY(4px);
+}
+
+.device-port-card:nth-child(12n + 1) .port-tooltip::after {
+  left: 20px;
+}
+
+.device-port-card:nth-child(12n + 1) .port-mark-wrap:hover .port-tooltip {
+  transform: translateX(0) translateY(0);
+}
+
+.device-loading {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.device-loading strong {
+  font-size: 15px;
+}
+
+.device-loading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.device-loading__spinner {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  border: 3px solid rgba(11, 110, 105, 0.18);
+  border-top-color: var(--teal);
+  animation: spin 0.8s linear infinite;
+}
+
+.port-dialog-backdrop {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.port-dialog {
+  width: min(760px, 100%);
+  max-height: min(760px, calc(100vh - 48px));
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 5px;
+  background: #fffaf2;
+  box-shadow: 0 24px 70px rgba(23, 34, 47, 0.28);
+}
+
+.port-detail-dialog {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: min(680px, calc(100vh - 48px));
+  min-height: min(680px, calc(100dvh - 48px));
+  max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - 48px);
+  overflow: hidden;
+}
+
+.port-detail-dialog__content {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.port-detail-dialog__loading,
+.port-detail-dialog__message {
+  display: grid;
+  align-content: center;
+  min-height: 100%;
+  padding: 24px;
+}
+
+.port-dialog-backdrop--opening {
+  animation: port-dialog-backdrop-in 160ms ease-out;
+}
+
+.port-dialog-backdrop--opening .port-detail-dialog {
+  animation: port-dialog-in 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes port-dialog-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes port-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .port-dialog-backdrop--opening,
+  .port-dialog-backdrop--opening .port-detail-dialog {
+    animation: none;
+  }
+}
+
+.port-dialog__header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  background: #fffaf2;
+}
+
+.port-dialog__header > div > span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.port-dialog__header h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.port-dialog__header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.port-dialog__close {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.port-dialog-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 10px 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.port-dialog-tabs button {
+  padding: 10px 14px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.port-dialog-tabs button:hover,
+.port-dialog-tabs button.is-active {
+  color: var(--teal);
+}
+
+.port-dialog-tabs button.is-active {
+  border-bottom-color: var(--teal);
+}
+
+.device-monitor-tabs {
+  margin: 18px 0 14px;
+  padding-left: 0;
+  border-bottom-color: rgba(31, 42, 55, 0.12);
+}
+
+.overview-panel {
+  display: grid;
+  gap: 0;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 5px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.overview-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 0 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.overview-tabs button {
+  padding: 5px 12px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.overview-tabs button:hover,
+.overview-tabs button.is-active {
+  color: var(--teal);
+}
+
+.overview-tabs button.is-active {
+  border-bottom-color: var(--teal);
+}
+
+.overview-tabs button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: -2px;
+}
+
+.overview-tab-content {
+  min-width: 0;
+  padding: 12px;
+}
+
+.overview-vlan-view {
+  min-width: 0;
+}
+
+.overview-vlan-section {
+  min-width: 0;
+  padding: 18px 6px;
+}
+
+.overview-vlan-section + .overview-vlan-section {
+  border-top: 1px solid var(--line);
+}
+
+.overview-port-vlan__header h4 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.device-vlan-toolbar__actions,
+.overview-port-vlan__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.overview-port-vlan__header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.overview-port-vlan__header label,
+.overview-port-vlan__fields label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.overview-port-vlan__header label {
+  grid-template-columns: auto minmax(180px, 260px);
+  align-items: center;
+  gap: 8px;
+}
+
+.overview-port-vlan__selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.overview-port-vlan__header select,
+.overview-port-vlan__fields input,
+.overview-port-vlan__fields select {
+  min-width: 0;
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.overview-port-vlan__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.overview-port-vlan__allowed {
+  grid-column: 1 / -1;
+}
+
+.overview-port-vlan__actions {
+  margin-top: 14px;
+}
+
+.overview-port-vlan__header select:focus-visible,
+.overview-port-vlan__fields input:focus-visible,
+.overview-port-vlan__fields select:focus-visible {
+  outline: 2px solid rgba(11, 110, 105, 0.2);
+  border-color: var(--teal);
+}
+
+@media (max-width: 720px) {
+  .device-vlan-toolbar,
+  .overview-port-vlan__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .device-vlan-toolbar__actions,
+  .overview-port-vlan__selector,
+  .overview-port-vlan__header label {
+    width: 100%;
+  }
+
+  .overview-port-vlan__selector label {
+    flex: 1;
+  }
+
+  .device-vlan-toolbar__actions .button {
+    flex: 1;
+  }
+
+  .overview-port-vlan__header label {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .overview-port-vlan__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-port-vlan__allowed {
+    grid-column: auto;
+  }
+}
+
+.overview-tab-placeholder {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+}
+
+.device-interface-status {
+  min-width: 0;
+  margin: 0 12px 12px;
+  padding: 12px;
+  border: 1px solid rgba(23, 34, 47, 0.1);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.device-interface-status__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.device-interface-status__header strong {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.device-vlan-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(31, 42, 55, 0.1);
+  border-radius: 5px;
+}
+
+.device-vlan-table {
+  min-width: 680px;
+  margin: 0;
+}
+
+.device-vlan-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px 10px;
+}
+
+.device-vlan-count {
+  margin-left: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.device-vlan-actions-head,
+.device-vlan-actions { text-align: right; white-space: nowrap; }
+.device-vlan-actions { display: flex; justify-content: flex-end; gap: 6px; }
+.vlan-id { color: var(--teal); font-variant-numeric: tabular-nums; }
+.vlan-members { max-width: 300px; color: var(--muted); font-size: 12px; }
+.vlan-status { display: inline-flex; padding: 4px 8px; border-radius: 5px; background: rgba(23,34,47,.08); color: var(--muted); font-size: 12px; }
+.vlan-status.is-active { background: rgba(11,110,105,.12); color: var(--teal); }
+
+.vlan-dialog__body { display: grid; gap: 14px; padding: 22px 24px 24px; }
+.vlan-dialog__body label { display: grid; gap: 6px; color: var(--muted); font-size: 13px; font-weight: 600; }
+.vlan-dialog__body input { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 5px; background: #fff; color: var(--ink); font: inherit; }
+.vlan-dialog__body input:focus { outline: 2px solid rgba(11,110,105,.22); border-color: var(--teal); }
+.vlan-dialog__notice, .vlan-dialog__target { padding: 11px 12px; border-radius: 5px; background: rgba(199,107,25,.09); color: var(--muted); font-size: 13px; }
+.vlan-dialog__error { padding: 10px 12px; border: 1px solid rgba(165,63,63,.22); border-radius: 5px; background: rgba(165,63,63,.1); color: var(--rose); font-size: 13px; line-height: 1.45; }
+.vlan-dialog__actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 6px; }
+
+.vlan-dialog__progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 11px 12px;
+  border: 1px solid rgba(11, 110, 105, 0.18);
+  border-radius: 5px;
+  background: rgba(11, 110, 105, 0.07);
+  color: var(--ink);
+}
+
+.vlan-dialog__progress .device-loading__spinner {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+.vlan-dialog__progress strong,
+.vlan-dialog__progress small {
+  display: block;
+}
+
+.vlan-dialog__progress strong {
+  font-size: 13px;
+}
+
+.vlan-dialog__progress small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ── 终端用户弹窗（新增/修改口令）内联状态条：全部在弹窗内提示，不用右上角 toast。── */
+.olt-terminal-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 0;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.olt-terminal-status[hidden] { display: none; }
+
+/* 进行中：青色底 + 内联 spinner（复用 device-loading__spinner 动画）。 */
+.olt-terminal-status--info {
+  border-color: rgba(11, 110, 105, 0.18);
+  background: rgba(11, 110, 105, 0.07);
+  color: var(--ink);
+}
+
+.olt-terminal-status--info::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid rgba(11, 110, 105, 0.2);
+  border-top-color: var(--teal);
+  animation: spin 0.8s linear infinite;
+}
+
+.olt-terminal-status--info strong { font-weight: 600; }
+
+/* 成功：青绿色调（同 vlan-dialog__progress 色系）。 */
+.olt-terminal-status--success {
+  border-color: rgba(11, 110, 105, 0.22);
+  background: rgba(11, 110, 105, 0.1);
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* 失败：红色调（同 vlan-dialog__error 色系）。 */
+.olt-terminal-status--error {
+  border-color: rgba(165, 63, 63, 0.22);
+  background: rgba(165, 63, 63, 0.1);
+  color: var(--rose);
+}
+
+/* ── 终端用户操作反馈弹窗（删除）：加载态 / 结果都在弹窗内展示。── */
+.olt-terminal-op-body { display: grid; gap: 14px; padding: 22px 24px 12px; }
+
+.olt-terminal-op {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 0;
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.olt-terminal-op[hidden] { display: none; }
+
+/* 让「操作反馈」状态条与所在 body 等宽：body 是隐式 auto 轨道的 grid，子项需显式撑满；
+   全局 box-sizing:border-box 保证 width:100% 含内边距、不溢出，line/vlan/dba/终端用户统一。 */
+.olt-terminal-op-body > .olt-terminal-op {
+  width: 100%;
+  align-self: stretch;
+}
+
+.olt-terminal-op--info {
+  border-color: rgba(11, 110, 105, 0.18);
+  background: rgba(11, 110, 105, 0.07);
+  color: var(--ink);
+}
+
+.olt-terminal-op--info::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(11, 110, 105, 0.2);
+  border-top-color: var(--teal);
+  animation: spin 0.8s linear infinite;
+}
+
+.olt-terminal-op--success {
+  border-color: rgba(11, 110, 105, 0.22);
+  background: rgba(11, 110, 105, 0.1);
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.olt-terminal-op--error {
+  border-color: rgba(165, 63, 63, 0.22);
+  background: rgba(165, 63, 63, 0.1);
+  color: var(--rose);
+}
+
+.vlan-dialog__body :disabled,
+.port-dialog__close:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.confirm-dialog-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.confirm-dialog {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px 16px;
+  width: min(430px, 100%);
+  padding: 22px;
+  border: 1px solid rgba(23, 34, 47, 0.14);
+  border-radius: 5px;
+  background: var(--panel-strong);
+  box-shadow: 0 24px 80px rgba(23, 34, 47, 0.28);
+}
+
+.confirm-dialog__mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(165, 63, 63, 0.22);
+  border-radius: 5px;
+  background: rgba(165, 63, 63, 0.1);
+  color: var(--rose);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.confirm-dialog__content {
+  min-width: 0;
+}
+
+.confirm-dialog__content h3 {
+  margin: 1px 0 7px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.confirm-dialog__content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.confirm-dialog__target {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid rgba(23, 34, 47, 0.08);
+  border-radius: 5px;
+  background: rgba(23, 34, 47, 0.04);
+  font-size: 13px;
+}
+
+.confirm-dialog__target span {
+  color: var(--muted);
+}
+
+.confirm-dialog__target strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+/* 可编辑确认框（如删除前修改 VLAN ID）：目标值渲染成可输入框，与新增表单输入框同外观。 */
+.confirm-dialog__target .confirm-dialog__target-input {
+  min-width: 0;
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid rgba(23, 34, 47, 0.25);
+  border-radius: 5px;
+  background: var(--panel-strong);
+  color: #000000;
+  font-size: 13px;
+  text-align: right;
+}
+.confirm-dialog__target .confirm-dialog__target-input:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+}
+
+.confirm-dialog__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.confirm-dialog__actions .button {
+  min-width: 82px;
+  padding: 8px 14px;
+}
+
+.confirm-dialog__actions .button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.port-dialog-tabs button:focus-visible,
+.port-dialog__close:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: -2px;
+}
+
+.port-dialog__body {
+  min-height: 230px;
+  padding: 20px 24px 24px;
+}
+
+.port-dialog-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.port-dialog-facts span {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(23, 34, 47, 0.09);
+  border-radius: 5px;
+  background: rgba(11, 110, 105, 0.05);
+}
+
+.port-dialog-facts small,
+.port-dialog-facts strong {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.port-dialog-facts small {
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.port-dialog-facts strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.port-dialog-section {
+  margin-top: 20px;
+}
+
+.port-dialog__basic-info {
+  width: 100%;
+  padding: 5px;
+}
+
+.port-dialog__basic-info .port-power-control .port-dialog-section__header > div {
+  width: 100%;
+}
+
+.port-dialog__basic-info .port-dialog-section {
+  margin-top: 0;
+}
+
+.port-dialog-section h4 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.port-dialog-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.port-power-control {
+  padding: 8px;
+  border: 1px solid rgba(23, 34, 47, 0.1);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.port-power-control__status {
+  font-weight: 700;
+}
+
+.port-power-control__status--up {
+  color: var(--teal);
+}
+
+.port-power-control__status--down {
+  color: var(--rose);
+}
+
+.port-power-control__status--unknown {
+  color: var(--muted);
+}
+
+.port-power-control p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.port-basic-info__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 20px;
+}
+
+.port-basic-info__facts p {
+  min-width: 0;
+}
+
+.port-basic-info__facts .port-basic-info__terminal-mac {
+  grid-column: 1 / -1;
+  overflow-wrap: anywhere;
+}
+
+.port-basic-info__facts input,
+.port-basic-info__facts select {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.port-basic-info__facts > input {
+  grid-column: 1 / -1;
+  max-width: 100%;
+}
+
+.port-basic-info__facts .port-vlan-field {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.port-vlan-fields {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.port-vlan-field--allowed {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 560px) {
+  .port-vlan-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .port-vlan-field--allowed {
+    grid-column: auto;
+  }
+
+}
+
+.port-basic-info__facts .port-vlan-field span {
+  white-space: nowrap;
+}
+
+.port-basic-info__facts .port-vlan-field select,
+.port-basic-info__facts .port-vlan-field input {
+  grid-column: auto;
+}
+
+.port-power-control__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.port-vlan-readonly {
+  color: var(--amber);
+  font-size: 12px;
+}
+
+.port-description-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.port-vlan-form {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.port-vlan-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.port-vlan-form label {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.port-vlan-form label > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.port-vlan-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.port-dialog__title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.port-traffic-trigger {
+  padding: 5px 10px;
+  border: 1px solid rgba(11, 110, 105, 0.2);
+  background: rgba(11, 110, 105, 0.1);
+  color: var(--teal);
+  box-shadow: none;
+}
+
+.port-traffic-dialog-backdrop {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.port-traffic-dialog {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  width: min(880px, 100%);
+  max-height: min(820px, calc(100vh - 48px));
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 5px;
+  background: #fffaf2;
+  box-shadow: 0 28px 84px rgba(23, 34, 47, 0.32);
+}
+
+.port-traffic-dialog__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(11, 110, 105, 0.05);
+}
+
+.port-traffic-dialog__header span,
+.port-traffic-section__header span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.port-traffic-dialog__header h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 20px;
+}
+
+.port-traffic-dialog__header p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.port-traffic-dialog__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.port-traffic-dialog__toolbar > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.port-traffic-dialog__body {
+  display: grid;
+  gap: 18px;
+  min-height: 300px;
+  overflow: auto;
+  padding: 18px;
+}
+
+.port-traffic-section {
+  min-width: 0;
+}
+
+.port-traffic-section + .port-traffic-section {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.port-traffic-section__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.port-traffic-section__header h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.port-traffic-section__header .port-traffic-live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.port-traffic-live i {
+  width: 7px;
+  height: 7px;
+  border-radius: 5px;
+  background: var(--teal);
+  box-shadow: 0 0 0 4px rgba(11, 110, 105, 0.1);
+}
+
+.port-traffic-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.port-traffic-stat {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  min-height: 68px;
+  padding: 12px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.port-traffic-stat small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.port-traffic-stat strong {
+  align-self: end;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.port-traffic-stat--in strong {
+  color: var(--teal);
+}
+
+.port-traffic-stat--out strong {
+  color: var(--amber);
+}
+
+.port-traffic-range {
+  display: inline-flex;
+  flex: 0 0 auto;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: rgba(23, 34, 47, 0.04);
+}
+
+.port-traffic-range button {
+  min-width: 64px;
+  padding: 6px 9px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.port-traffic-range button:hover,
+.port-traffic-range button.is-active {
+  color: #fffaf2;
+  background: var(--teal);
+}
+
+.port-traffic-range button:focus-visible,
+.port-traffic-trigger:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.traffic-chart-list {
+  display: grid;
+  gap: 12px;
+}
+
+.traffic-chart {
+  padding: 14px;
+  border: 1px solid rgba(23, 34, 47, 0.09);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.traffic-chart__header,
+.traffic-chart__legend,
+.traffic-chart__range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.traffic-chart__header h5 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.traffic-chart__header span,
+.traffic-chart__legend,
+.traffic-chart__range {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.traffic-chart__legend {
+  justify-content: flex-start;
+  margin-top: 7px;
+}
+
+.traffic-chart__legend i {
+  width: 18px;
+  height: 3px;
+  margin-left: 6px;
+  border-radius: 5px;
+}
+
+.traffic-chart__legend i:first-child {
+  margin-left: 0;
+}
+
+.traffic-chart__in,
+.traffic-chart__line--in,
+.traffic-chart__dot--in {
+  background: var(--teal);
+  stroke: var(--teal);
+  fill: var(--teal);
+}
+
+.traffic-chart__out,
+.traffic-chart__line--out,
+.traffic-chart__dot--out {
+  background: var(--amber);
+  stroke: var(--amber);
+  fill: var(--amber);
+}
+
+.traffic-chart__svg {
+  display: block;
+  width: 100%;
+  height: 150px;
+  margin-top: 6px;
+  overflow: visible;
+}
+
+.traffic-chart__grid {
+  fill: none;
+  stroke: rgba(23, 34, 47, 0.12);
+  stroke-width: 1;
+}
+
+.traffic-chart__axis {
+  fill: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 11px;
+}
+
+.traffic-chart__line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.traffic-chart__dot {
+  stroke: #fffaf2;
+  stroke-width: 2;
+}
+
+.traffic-chart__range {
+  margin: -3px 4px 0 38px;
+}
+
+.traffic-chart__empty {
+  padding: 30px 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .port-traffic-dialog-backdrop {
+    align-items: end;
+    padding: 12px;
+  }
+
+  .port-traffic-dialog {
+    max-height: calc(100vh - 24px);
+  }
+
+  .port-traffic-dialog__header,
+  .port-traffic-dialog__toolbar,
+  .port-traffic-dialog__body {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .port-traffic-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .port-traffic-section__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .port-traffic-range {
+    width: 100%;
+  }
+
+  .port-traffic-range button {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.port-dialog-table-wrap {
+  overflow-x: auto;
+}
+
+.port-dialog-table {
+  min-width: 500px;
+}
+
+.port-dialog-error {
+  padding: 14px 16px;
+  border: 1px solid rgba(165, 63, 63, 0.24);
+  border-radius: 5px;
+  background: rgba(165, 63, 63, 0.08);
+  color: #7f3240;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.ssh-terminal-backdrop {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.ssh-terminal {
+  width: min(980px, 100%);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 5px;
+  background: #17222f;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.4);
+}
+
+.ssh-terminal__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  color: #edf4f1;
+  background: #20313f;
+}
+
+.ssh-terminal__header > div > span {
+  display: block;
+  margin-bottom: 3px;
+  color: #86c9bc;
+  font-size: 12px;
+}
+
+.ssh-terminal__header h3,
+.ssh-terminal__header p {
+  margin: 0;
+}
+
+.ssh-terminal__header h3 {
+  font-size: 18px;
+}
+
+.ssh-terminal__header p {
+  margin-top: 3px;
+  color: #b9c5ca;
+  font-size: 12px;
+}
+
+.ssh-terminal__output {
+  min-height: 380px;
+  max-height: min(58vh, 620px);
+  margin: 0;
+  overflow: auto;
+  padding: 18px;
+  color: #e6f3ec;
+  background: #10181f;
+  font: 13px/1.55 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.ssh-terminal__command {
+  padding: 14px 18px 18px;
+  background: #20313f;
+}
+
+.ssh-terminal__command textarea {
+  width: 100%;
+  resize: vertical;
+  border-color: rgba(134, 201, 188, 0.35);
+  border-radius: 5px;
+  color: #e6f3ec;
+  background: #10181f;
+  font: 13px/1.5 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.ssh-terminal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1180px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero,
+  .grid--two {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid--wide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .device-card-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .device-port-card:nth-child(12n + 1) .port-tooltip {
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+  }
+
+  .device-port-card:nth-child(12n + 1) .port-tooltip::after {
+    left: 50%;
+  }
+
+  .device-port-card:nth-child(12n + 1) .port-mark-wrap:hover .port-tooltip {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .device-port-card:nth-child(6n + 1) .port-tooltip {
+    left: 0;
+    transform: translateX(0) translateY(4px);
+  }
+
+  .device-port-card:nth-child(6n + 1) .port-tooltip::after {
+    left: 20px;
+  }
+
+  .device-port-card:nth-child(6n + 1) .port-mark-wrap:hover .port-tooltip {
+    transform: translateX(0) translateY(0);
+  }
+
+  .device-health-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .port-dialog-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .content,
+  .sidebar {
+    padding: 18px;
+  }
+
+  .form-grid,
+  .form-grid--wide,
+  .detail-grid,
+  .inline-form {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 22px;
+  }
+
+  .device-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .device-port-card:nth-child(3n + 1) .port-tooltip {
+    left: 0;
+    transform: translateX(0) translateY(4px);
+  }
+
+  .device-port-card:nth-child(3n + 1) .port-tooltip::after {
+    left: 20px;
+  }
+
+  .device-port-card:nth-child(3n + 1) .port-mark-wrap:hover .port-tooltip {
+    transform: translateX(0) translateY(0);
+  }
+
+  .device-facts,
+  .device-health-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .device-monitor__hero {
+    display: grid;
+  }
+
+  .port-dialog-backdrop {
+    align-items: end;
+    padding: 12px;
+  }
+
+  .port-dialog {
+    max-height: calc(100vh - 24px);
+  }
+
+  .port-detail-dialog {
+    min-height: min(640px, calc(100vh - 24px));
+    min-height: min(640px, calc(100dvh - 24px));
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+
+  .port-dialog__header,
+  .port-dialog__body {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .port-dialog-tabs {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .port-dialog-tabs button {
+    flex: 1;
+    padding-right: 6px;
+    padding-left: 6px;
+    white-space: nowrap;
+  }
+
+  .port-dialog-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .port-vlan-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .port-vlan-form__actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ssh-terminal-backdrop {
+    align-items: end;
+    padding: 12px;
+  }
+
+  .ssh-terminal__output {
+    min-height: 300px;
+    max-height: 54vh;
+  }
+
+  .port-tooltip {
+    left: 0;
+    transform: translateX(0) translateY(4px);
+  }
+
+  .port-tooltip::after {
+    left: 20px;
+  }
+
+  .port-mark-wrap:hover .port-tooltip {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Device-center layout */
+#overview.panel,
+#devices.panel {
+  border-radius: 5px;
+}
+
+.shell {
+  grid-template-columns: minmax(280px, 25vw) minmax(0, 1fr);
+}
+
+.sidebar {
+  overflow-y: auto;
+}
+
+.device-sidebar-panel {
+  display: grid;
+  gap: 10px;
+  min-height: 0;
+  padding: 14px;
+  border: 1px solid rgba(23, 34, 47, 0.12);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.52);
+}
+
+.device-sidebar-stack {
+  display: grid;
+  gap: 10px;
+  min-height: 0;
+}
+
+.device-sidebar-panel__header,
+.device-sidebar-panel__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.device-sidebar-panel__header span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.device-sidebar-panel__selection,
+.device-sidebar-panel__selection label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.device-sidebar-panel__selection label {
+  cursor: pointer;
+}
+
+.device-sidebar-panel__selection input,
+.device-list-row__checkbox {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--teal);
+  cursor: pointer;
+}
+
+.device-sidebar-panel__selection input:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.device-sidebar-panel__actions .button {
+  min-width: 0;
+  flex: 1 1 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+.device-sidebar-panel__actions--toolbar {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  overflow-x: auto;
+  justify-content: stretch;
+}
+
+.device-sidebar-panel__actions--toolbar .button {
+  width: 100%;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+#open-collection-config {
+  width: 100%;
+  padding: 10px;
+}
+
+#open-collection-config {
+  color: #eaf4f1;
+  background: var(--teal);
+}
+
+#registration-status {
+  cursor: pointer;
+}
+
+#registration-status[aria-disabled="true"] {
+  cursor: wait;
+}
+
+#registration-status:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+#registration-status > * {
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+#registration-status:not([aria-disabled="true"]):hover .registration-validity {
+  border-color: rgba(11, 110, 105, 0.42);
+  background: rgba(11, 110, 105, 0.12);
+}
+
+#registration-status:not([aria-disabled="true"]):hover .registration-warning {
+  border-color: rgba(165, 63, 63, 0.48);
+  background: rgba(165, 63, 63, 0.12);
+}
+
+.registration-warning {
+  display: grid;
+  gap: 3px;
+  padding: 10px 12px;
+  border: 1px solid rgba(165, 63, 63, 0.28);
+  border-radius: 5px;
+  background: rgba(165, 63, 63, 0.08);
+  color: var(--rose);
+  font-size: 12px;
+}
+
+.registration-warning span {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.registration-validity {
+  display: grid;
+  gap: 3px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--teal);
+  background: rgba(11, 110, 105, 0.07);
+  color: var(--teal);
+  font-size: 12px;
+}
+
+.registration-validity span {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.registration-validity.is-loading {
+  border-left-color: var(--muted);
+  background: rgba(23, 34, 47, 0.05);
+  color: var(--muted);
+}
+
+.device-sidebar-panel .button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+  filter: grayscale(0.7);
+}
+
+#device-list {
+  min-height: 120px;
+  max-height: min(52vh, 620px);
+  overflow: auto;
+  border-top: 1px solid var(--line);
+}
+
+.device-list-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  transition: background 160ms ease;
+}
+
+.device-list-row:hover,
+.device-list-row.is-active {
+  background: rgba(11, 110, 105, 0.1);
+}
+
+.device-list-row:focus-within {
+  box-shadow: inset 3px 0 0 var(--teal);
+}
+
+.device-list-row__checkbox {
+  justify-self: center;
+}
+
+.device-list-item {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 9px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 8px 11px 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.device-list-item__status { width: 8px; height: 8px; border-radius: 5px; background: var(--rose); }
+.device-list-item__status.is-online { background: var(--teal); }
+.device-list-item span { min-width: 0; display: grid; gap: 3px; }
+.device-list-item strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+.device-list-item small,
+.device-list-item em { color: var(--muted); font-size: 11px; font-style: normal; }
+.device-list-item em { white-space: nowrap; }
+.device-list-empty { padding: 30px 8px; color: var(--muted); text-align: center; font-size: 13px; }
+
+@media (max-width: 1180px) {
+  .device-sidebar-panel { max-height: 360px; }
+}
+
+@media (max-width: 720px) {
+  .panel__header { align-items: flex-start; flex-direction: column; }
+  .settings-dialog-backdrop { padding: 10px; }
+  .settings-dialog { max-height: calc(100vh - 20px); }
+  .settings-form__fields { grid-template-columns: minmax(0, 1fr); }
+  .settings-field--wide { grid-column: auto; }
+  .registration-dialog-backdrop { padding: 10px; }
+  .registration-dialog { max-height: calc(100vh - 20px); }
+  .registration-form__fields { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 440px) {
+  .device-sidebar-panel__actions--toolbar { grid-template-columns: repeat(6, minmax(46px, 1fr)); }
+}
+
+/*
+ * 弹窗遮罩的模糊效果改由独立的 ::before 承载。
+ * 若 backdrop-filter 直接写在遮罩容器上，弹窗作为其后代会进入合成层，
+ * 浏览器会禁用子像素抗锯齿（LCD 文字）导致弹窗文字发虚；
+ * 拆成同级伪元素后弹窗文字恢复清晰，视觉上与原来完全一致。
+ */
+.device-form-modal::before,
+.settings-dialog-backdrop::before,
+.registration-dialog-backdrop::before,
+.port-dialog-backdrop::before,
+.confirm-dialog-backdrop::before,
+.port-traffic-dialog-backdrop::before,
+.ssh-terminal-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(5px);
+}
+
+.device-form-modal::before { background: rgba(15, 24, 31, 0.52); backdrop-filter: blur(4px); }
+.settings-dialog-backdrop::before { background: rgba(15, 24, 31, 0.54); }
+.registration-dialog-backdrop::before { background: rgba(15, 24, 31, 0.54); }
+.port-dialog-backdrop::before { background: rgba(23, 34, 47, 0.48); }
+.confirm-dialog-backdrop::before { background: rgba(23, 34, 47, 0.54); }
+.port-traffic-dialog-backdrop::before { background: rgba(23, 34, 47, 0.56); }
+.ssh-terminal-backdrop::before { background: rgba(15, 24, 31, 0.52); }
+
+.device-form-modal > *,
+.settings-dialog-backdrop > *,
+.registration-dialog-backdrop > *,
+.port-dialog-backdrop > *,
+.confirm-dialog-backdrop > *,
+.port-traffic-dialog-backdrop > *,
+.ssh-terminal-backdrop > * {
+  position: relative;
+  z-index: 1;
+}
+
+/*
+ * ── 工程控制台新增（本文件其余部分与 /switchweb/src/styles.css 逐字节一致）──
+ * 只补三处定制所需的最小样式：左侧栏模块菜单、右侧模块视图容器、采集配置面板。
+ */
+.module-nav {
+  margin-bottom: 4px;
+}
+
+.module-nav a {
+  font-size: 13px;
+}
+
+.module-nav a.is-active {
+  background: linear-gradient(135deg, var(--teal), #0f8a83);
+  color: #f6fffd;
+}
+
+.module-nav a.is-active:hover {
+  color: #f6fffd;
+}
+
+.module-nav a.is-missing {
+  opacity: 0.6;
+}
+
+.module-nav a.is-missing::after {
+  content: "未安装";
+  margin-left: 8px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.module-view {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.module-view[hidden] {
+  display: none;
+}
+
+.module-placeholder .empty-state {
+  line-height: 1.75;
+}
+
+/* 设置 TAB（与“面板 / VLAN”平级的第三项；内容壳同样复用 .device-monitor，见下方对齐块） */
+.collection-panel__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  /* 原 .collection-panel 的 grid gap: 8px 随类名一并移除，改为显式间距，观感不变。 */
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.collection-panel__toolbar .button {
+  box-shadow: none;
+}
+
+/* 两个表单之间的分隔线由基线 .settings-form + .settings-form 提供，这里只补回原 grid gap 的 8px 间距 */
+.overview-tab-content > .device-monitor > .settings-form + .settings-form {
+  margin-top: 8px;
+}
+
+/* ── #overview-cards（.overview-panel）的行高不再被容器拉伸 ──
+   基线：`.overview-panel { display: grid; gap: 0; … }` 没有 align-content，取默认值 stretch；
+   而该面板被 shell（min-height: 100vh）拉到整屏高，两行（TAB 条行 + 内容行）就会按剩余高度被拉伸——
+   内容短的 TAB 会把上面的 TAB 条行一起“撑高”（同一元素在不同 TAB 量到 46.64 / 55.5 / 195.5 即由此而来）。
+   改为 start：两行按自身高度紧凑排列，多余高度留在面板底部，TAB 条行恒定。 */
+.overview-panel {
+  align-content: start;
+}
+
+/* ── 三个根 TAB（面板 / VLAN / 设置）视觉对齐 ──
+   ① 内容壳统一为 .device-monitor：标签内容区 12px + 壳外顶距 8px + 卡片内边距 10px
+      → 三个 TAB 首块内容顶距都是 30px；
+   ② TAB 条本身尺寸固定：宽 = 容器宽（内容区宽，例 1422px），高固定 47.5px——
+      width: 100% + height/min-height/max-height: 47.5px + overflow: hidden，
+      里面任何节点（按钮、意外内容）都撑不动这个条，三个 TAB 永远是同一尺寸；
+   ③ 按钮高度硬固定 34px：要求 `height: 34px` 就是 34px——标签多长、是否折行、同行元素多高都不改变按钮盒子：
+      a) height / min-height / max-height 三重写死（内容再高顶不动，别处再写 height 也改不了）；
+      b) box-sizing: border-box → 34px 即最终可见高度（已含 3px 激活下划线）；
+      c) align-self: flex-end + flex: none → 即使容器 align-items: stretch 也不会被拉伸；
+      d) white-space: nowrap + overflow: hidden → 内容不参与高度（折行 / 溢出都影响不了盒子）；
+      e) 选择器带 #overview-cards 提权（本文件没有任何 !important），后续类规则与窄屏媒体查询都压不过它。 */
+.overview-tabs {
+  width: 100%;
+  height: 47.5px;
+  min-height: 47.5px;
+  max-height: 47.5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* 34px 的按钮贴底摆放：3px 激活下划线仍压住容器的 1px 下边线，多出的 12.5px 在按钮上方 */
+  align-items: flex-end;
+}
+
+.overview-tabs button,
+#overview-cards .overview-tabs button {
+  height: 34px;
+  min-height: 34px;
+  max-height: 34px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  flex: none;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.overview-tab-content > .device-monitor {
+  margin-top: 8px;
+}
+
+/* VLAN 区块自带 18px 上内边距，补一条让首块内容顶距与面板 / 设置一致（都是 30px） */
+.overview-tab-content > .device-monitor > .overview-vlan-section:first-child {
+  padding-top: 0;
+}
+
+/* ── 同一口径：对话框 / 面板内 TAB 条（`.port-dialog-tabs`，含 `.device-monitor-tabs` 变体）──
+   基线里这些按钮只有 `padding: 10px 14px`（实高 = 10 + 默认行高 + 10 + 3 ≈ 40px，会随字体度量变化），
+   同样按上面的办法把高度硬固定为 40px；注意：
+     · 不写 padding-left / right、不写 flex —— 窄屏媒体查询（max-width: 720px）靠它们让 TAB 均分宽度；
+     · 不写 flex: none，避免覆盖媒体查询里的 flex: 1。 */
+.port-dialog-tabs {
+  align-items: flex-end;
+}
+
+.port-dialog-tabs button,
+#overview-cards .port-dialog-tabs button {
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  box-sizing: border-box;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+/* ── 提示 / 告警字号统一到正文（14px）──
+   基线里这些元素有的继承 body 的 16px（如 .port-dialog-error、.notice p），有的是 12/13px，
+   与周围正文（14px）不一致；统一后提示、告警与正文同号。 */
+.port-dialog-error,
+.settings-dialog__error,
+.settings-dialog__load-error,
+.settings-dialog__load-error span,
+.registration-form__hint,
+.collection-panel__toolbar,
+.notice p,
+.empty-state,
+.device-vlan-toolbar span,
+.device-vlan-count,
+.vlan-members {
+  font-size: 14px;
+}
+
+/* ── 面板「数据来源」中文值的字号 ──
+   该格在“本地缓存”分支渲染的是中文标签（本地文件缓存），与另外三项的英文 / 数字值同为 13px，
+   但中文（雅黑 / Noto）在 13px 下的字面视觉明显更大，看起来“字体字号与其它不一致”。
+   按本工程既有口径（中文标签 12px、数值 13px）把这一项收敛到 12px，四项事实视觉统一。 */
+.device-facts__source-label {
+  font-size: 12px;
+}
+
+/* 左侧栏台账面板随模块切换：面板本身有 `display: grid`，元素自带的 hidden 属性会被类规则压掉
+   （与 .module-view[hidden] 同一原因）。这里显式补回，否则切到其它模块时上一个模块的台账面板仍可见。 */
+.device-sidebar-panel[hidden] {
+  display: none;
+}
+
+/* ==========================================================================================
+   OLT 状态：机框板卡转置表格（2026-09-22，口径与素材对齐老控制台 chunk-oltStatus.js）
+   - 图片：web/src/assets/olt/olt_<板卡名>.png（老控制台素材，41~47 × 719 的竖条），按原尺寸显示；
+   - 端口：绝对定位在竖条右侧，纵坐标由 olt.js 的 BOARD_PORT_GROUPS 按板卡分组计算（与老控制台同偏移）；
+   - 状态点：沿用老控制台配色（在线 #5da500 / 离线 #ff0000）。
+   ========================================================================================== */
+/* OLT 连接结果的信息逐行展示（业务方要求：不卡片，用「标签：值」换行）。 */
+.olt-detail-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.olt-detail-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.olt-detail-line span {
+  flex: none;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.olt-detail-line .olt-detail-value {
+  color: #000000;
+}
+
+/* OLT「配置信息」栏目的当前配置全文（`display current-configuration` 的原始文本）：
+   保留换行/缩进逐字展示；深色终端配色与 .ssh-terminal__output 同口径，便于对齐命令行查看。 */
+.olt-config-text {
+  margin: 0;
+  max-height: min(58vh, 560px);
+  overflow: auto;
+  padding: 16px;
+  color: #dbe9e2;
+  background: #10181f;
+  font: 12.5px/1.55 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  tab-size: 2;
+}
+
+.olt-config-text code {
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+/* OLT「配置信息」栏目的「OLT 登录用户」小节：独立的子区块卡片 + 用户名列表。 */
+.olt-subsection {
+  margin-top: 20px;
+  border: 1px solid var(--line, #e4e7ed);
+  border-radius: 8px;
+  background: var(--surface, #fff);
+}
+
+.olt-user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.olt-user-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--e-border, #e4e7ed);
+}
+.olt-user-row:last-child {
+  border-bottom: none;
+}
+
+.olt-user-name {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+  color: var(--ink, #303133);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.olt-user-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.button--small {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+.button--danger-ghost {
+  background: transparent;
+  color: #e34d59;
+  border: 1px solid currentColor;
+}
+
+.olt-frame-desc {
+  margin: 8px 0 0;
+  color: #000000;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.olt-elapsed {
+  font-weight: 600;
+}
+
+.olt-board-title {
+  font-size: 14px;
+  color: var(--ink);
+}
+
+/* 机框板卡转置表格（2026-09-22，合并机框示意图与板卡表，对照老控制台 oltStatus）：
+   行 = 插槽/型号/运行状态/描述/温度/示意图，列 = 每块板卡（横向滚动；业务方口径：不显示 PON 口在线/总数）。
+   行首「标签」列用 <th>，数据用 <td>；示意图行放宽内边距以容纳 719px 单板图。 */
+.olt-board-table {
+  min-width: 720px;
+}
+
+.olt-board-table th {
+  width: 120px;
+  min-width: 120px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.olt-board-table td {
+  vertical-align: top;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.olt-cell-slot {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* OLT「VLAN」栏目四张 data-table（2026-09-24，从 ul/li 列表升级为表格）：
+   三层 VLAN 接口 / 上行透传 / VLAN 列表 / 静态路由，纵向表格：thead 列名 + tbody 数据行。
+   .olt-vlan-mono 让 VLAN ID/端口/IP/路由等固定宽度字段以等宽字体对齐，
+   .olt-vlan-actions 让「操作」列内的按钮右对齐且不换行，
+   .olt-vlan-empty 用于空表的合并单元格提示。 */
+.olt-vlan-table {
+  width: 100%;
+}
+
+.olt-vlan-table th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.olt-vlan-table td {
+  font-size: 12px;
+  padding: 8px 12px;
+}
+
+.olt-vlan-mono {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  white-space: nowrap;
+}
+
+.olt-vlan-actions {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.olt-vlan-actions .button {
+  vertical-align: baseline;
+}
+
+.olt-vlan-empty {
+  color: var(--muted, #909399);
+  text-align: center;
+}
+
+/* OLT「DBA/线路模板」栏目的 DBA 模板表格：
+   .olt-dba-type 让 DBA 类型（type1..type5）与线路模板 PON 类型以浅色小标签展示（老控制台同口径文案）。 */
+.olt-dba-type {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 5px;
+  background: #eef4fb;
+  color: #3b7dd8;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.olt-dba-line-pending {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line, #e4e7ed);
+  color: var(--muted, #909399);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* OLT「DBA/线路模板」栏目的 ONT 线路模板表格与新增弹窗：
+   .olt-line-profile-row 是模板行（数据行统一 12px、不加粗，与 DBA/VLAN 各表一致）；
+   .olt-line-map-cell 是「映射关系」列内嵌子表容器；.olt-line-map-table 即内嵌子表
+   （T-CONT / DBA模版 / GEM Port / GEM 映射ID / VLAN，表头浅蓝底、隔行浅灰底）；
+   .olt-line-map-empty 是没有任何映射时的占位文案；
+   .olt-line-vlan-row / .olt-line-vlan-hint 是新增弹窗的 VLAN textarea 布局。 */
+.olt-line-profile-row td {
+  vertical-align: top;
+}
+
+/* 映射关系列内嵌的子表容器：去掉外层单元格默认内边距，让子表贴近各列。 */
+.olt-line-map-cell {
+  padding: 6px 8px !important;
+}
+
+.olt-line-map-empty {
+  color: var(--muted, #909399);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ONT 线路模板「映射关系」内嵌子表（对齐老控制台 chunk-dba_lineTem.js 的层级）：
+   T-CONT / DBA模版 / GEM Port / GEM 映射ID / VLAN；
+   表头浅蓝底 + 细边框，数据行隔行浅灰底（#f9f9f9）。 */
+.olt-line-map-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-weight: 400;
+  font-size: 12px;
+}
+.olt-line-map-table thead th {
+  background: #e6ecf3;
+  color: #3b4554;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border: 1px solid #dfe4ec;
+}
+.olt-line-map-table tbody td {
+  color: var(--muted, #606266);
+  padding: 4px 10px;
+  border: 1px solid #f0f2f6;
+  white-space: nowrap;
+}
+.olt-line-map-table tbody tr:nth-child(even) td {
+  background: #f9f9f9;
+}
+.olt-line-vlan-row {
+  display: flex;
+  align-items: flex-start;
+}
+.olt-line-vlan-row textarea {
+  min-height: 64px;
+  resize: vertical;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+}
+.olt-line-vlan-hint {
+  margin-top: -6px;
+  margin-left: 158px;
+  color: var(--muted, #909399);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.olt-line-vlan-hint code {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  padding: 0 4px;
+}
+
+.olt-figure-cell {
+  padding: 8px !important;
+  white-space: normal !important;
+  min-width: 240px;
+}
+
+.olt-cell-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+/* 示意图单元格仍沿用单板图排版（图 719px 高，端口绝对定位在 .olt-board-cell 右侧）。 */
+.olt-figure-cell .olt-board-cell {
+  position: relative;
+  display: inline-block;
+}
+
+.olt-board-cell {
+  position: relative;
+  display: inline-block;
+}
+
+.olt-board-image {
+  display: block;
+  /* 保持原图宽高比，不做拉伸：高度统一 719px 保证板位纵向对齐，宽度随各自素材比例自适应
+     （素材实宽 40~60px 不等，若再强制 width 固定会把宽板横向压扁/窄板拉宽）。 */
+  width: auto;
+  height: 719px;
+}
+
+.olt-board-image--interface {
+  /* 上行/下行接口板素材为矮图（H801X2CS/H801GICF=50×403、H801GICG=47×359、H901PILA=60×231），
+     业务方要求按各自自然尺寸显示（不再随 719px 高板拉长，也不再强制 50×403 把窄/宽板变形）。
+     端口说明文字 overlay 的 top 由 olt.js 按「自然高度/719」等比缩放，保证随尺寸自适应。 */
+  width: auto;
+  height: auto;
+}
+
+.olt-board-image--missing {
+  box-sizing: border-box;
+  width: 42px;
+  height: 719px;
+  padding: 0 4px;
+  border: 1px dashed #dcdfe6;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+}
+
+.olt-board-port {
+  position: absolute;
+  left: 54px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: #000000;
+}
+
+.olt-board-port--interface {
+  /* 接口板（矮图）说明文字：left 由 olt.js 按「板宽 + 4px」内联给出，
+     与高板 left:54px 的“图片右侧外”口径一致，避免 47/50/60px 不同板宽下错位。 */
+  left: auto;
+}
+
+.olt-port-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.olt-port-name {
+  font-weight: 600;
+}
+
+.olt-port-dot {
+  display: inline-block;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  /* 10px 方块 + 5px 圆角 = 正圆（本工程基线要求所有圆角统一 5px，见 docs/08 §2） */
+  border-radius: 5px;
+  background-color: #ff0000;
+}
+
+.olt-port-dot.is-online {
+  background-color: #5da500;
+}
+
+.olt-port-meta {
+  display: block;
+  color: #000000;
+}
+
+.olt-board-desc {
+  max-width: 220px;
+  white-space: normal;
+}
+
+/* OLT 配置/状态采集等 loading 文案：与 .device-loading p 同口径（等宽色/字号），
+   作为 span 使用（此前依赖父级 .device-loading，补一条免得 web-smoke 报“类无样式定义”）。 */
+.olt-config-panel .device-loading__text,
+.olt-config-text + .device-monitor .device-loading__text,
+.device-loading__text {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* —— 添加ONT业务模板弹窗（#olt-srv-form）字段对齐（2026-09-30 追加）——
+   与 DBA / 线路模板弹窗同口径：单列布局（form 本身 1fr）+ label 两列
+   （150px 标签列 + minmax(0,1fr) 编辑框列，保留基线 gap:8px），
+   字段说明文字右对齐（label span 全局已 text-align:right）、编辑框占满剩余宽度。
+   .olt-line-vlan-row 原本是 flex（线路模板弹窗用），这里以更高优先级覆盖成 grid，
+   使「业务VLAN列表：」与其它字段同列右对齐、textarea 起点一致。
+   注意：不要把 grid-template-columns 扩成三列 / 把 gap 改成 0，
+   否则编辑框会被挤到约 1/4 宽度（“编辑框挤在一起”的回归根因）。 */
+#olt-srv-form label {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  align-items: center;
+}
+
+/* srv 弹窗内 hint 与 textarea 起点对齐（150px 标签列 + 8px gap = 158px）。 */
+#olt-srv-form .olt-line-vlan-hint {
+  margin-left: 158px;
+}

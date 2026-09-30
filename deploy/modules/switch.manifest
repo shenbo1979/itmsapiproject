@@ -1,0 +1,21 @@
+# switch 模块打包清单（M0 草案；字段含义见 deploy/README.md）
+module.id=switch
+module.title=交换机运维
+# nav_title：前端左侧一级导航的标题（与 internal/modules/switch 的 Nav() 保持一致）
+module.nav_title=交换机管理
+module.version=0.1.0-m1
+module.depends=
+module.port=8092
+module.env=switch.env
+module.service=txapi-switch.service
+# 一模块一库：模块独占自己的 SQLite（M1 起）；老库 /home/switch_rpc_api.db 的数据由 M2 迁移工具搬入
+module.datadir=/home/tx/switch.db
+# M1 已迁入：设备台账与基础资料（tbVenue/tbManufacturer/tbPurpose/tbProtocol/tbModel/tbDeviceInformation）
+module.files=bin/txapi,web/src/modules/switch.js,web/src/styles.css,deploy/systemd/txapi-switch.service.tpl
+module.legacy_routes=/itms/getTerminalMAC,/itms/handleDeviceInformation,/itms/handleRpcApiConfig,/itms/handleSwitch,/itms/handleVlan
+module.menus=switch.ledger,switch.masterdata,switch.panel,switch.collection
+# 第二批（端口/VLAN/终端/采集）需要的运行时数据：
+#   /home/switchfile/loginfile.json   交换机登录记录（随 AES 密钥轮换重加密）
+#   /home/switchfile/devicefile/*.json 设备采集缓存（第二批迁入采集任务后写入）
+module.external=
+bundle=switch,all

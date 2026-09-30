@@ -1,0 +1,10 @@
+{
+  "name": "txconsole-web",
+  "version": "0.1.0-m1",
+  "private": true,
+  "type": "module",
+  "description": "统一工程前端壳（capabilities 驱动菜单 + 注册信息页）",
+  "scripts": {
+    "start": "node server.cjs"
+  }
+}

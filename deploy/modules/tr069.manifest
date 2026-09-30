@@ -1,0 +1,17 @@
+# tr069 模块打包清单（M0 草案；字段含义见 deploy/README.md）
+module.id=tr069
+module.title=TR069/CPE（光猫管理）
+# nav_title：前端左侧一级导航的标题（与 internal/modules/tr069 的 Nav() 保持一致）
+module.nav_title=TR069 管理
+module.version=0.1.0-m0
+module.depends=olt
+module.port=8091
+module.env=tr069.env
+module.service=txapi-tr069.service
+module.datadir=/home/tx/tr069.db
+module.files=bin/txapi,web/src/modules/tr069.js,web/src/tr069.css,deploy/systemd/txapi-tr069.service.tpl
+module.legacy_routes=/itms/handleTr069LogList,/itms/handleTr069Poliey,/itms/handleTr069TemplateList,/itms/handleCpeGroupInfo,/itms/handleDeviceInfo,/itms/handleDeviceStatus,/itms/handleDeviceDelete,/itms/handleEditRoom,/itms/handleServerConfig,/itms/handleTestDiag,/itms/handleVersionInfo,/itms/handleItmsVersion,/itms/handleItmsUpgraded,/itms/handleUploadFile,/itms/handleUserAction,/itms/handleWorkOrderList,/client/fn
+module.menus=tr069.cpe,tr069.template,tr069.group
+# Python 侧（/itms-py）与 socket 层是否随包，待业务确认（docs/03 待确认清单 #1/#6）
+module.external=python:/itms-py,service:itmssocketmain
+bundle=olt,all

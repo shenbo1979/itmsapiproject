@@ -1,0 +1,292 @@
+{
+  "note": "switch 模块冒烟用例（需先完成注册，见 make selfcheck-switch）：前 17 条断言已迁入接口返回真实实现的结果（无设备时给出与老实现一致的参数校验错误）。",
+  "cases": [
+    {
+      "path": "/itms/handleSwitchVenue/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": 0,
+        "required": [
+          "data"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchManufacturer/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": 0,
+        "required": [
+          "data"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchPurpose/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": 0,
+        "required": [
+          "data"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchProtocol/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": 0,
+        "required": [
+          "data"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchModel/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": 0,
+        "required": [
+          "data"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchInfo/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": 0,
+        "required": [
+          "data"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/api/v2/switch/ledger",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {},
+      "expect": {
+        "http": 200,
+        "code": 0,
+        "required": [
+          "data"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchPortDetail/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": -1,
+        "required": [
+          "message"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchVlan/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": -1,
+        "required": [
+          "message"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleDeviceInformation/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": 0,
+        "required": [
+          "data"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchSnifferConfig/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": 0,
+        "required": [
+          "data"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchCollectionSettings/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": 0,
+        "required": [
+          "data"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleVlanInformation/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": -1,
+        "required": [
+          "message"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleVlanClassifier/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": -1,
+        "required": [
+          "message"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/getTerminalMAC/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": -1,
+        "required": [
+          "message"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleSwitchTerminal/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": -1,
+        "required": [
+          "message"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "path": "/itms/handleRpcApiConfig/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "code": -1,
+        "required": [
+          "message"
+        ]
+      },
+      "status": "active"
+    }
+  ]
+}

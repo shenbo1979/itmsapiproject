@@ -1,0 +1,16 @@
+# olt 模块打包清单（M0 草案；字段含义见 deploy/README.md）
+module.id=olt
+module.title=OLT（PON/ONT 管理）
+# nav_title：前端左侧一级导航的标题（与 internal/modules/olt 的 Nav() 保持一致）
+module.nav_title=OLT/ONU 管理
+module.version=0.1.0-m0
+module.depends=
+module.port=8090
+module.env=olt.env
+module.service=txapi-olt.service
+module.datadir=/home/tx/olt.db
+module.files=bin/txapi,web/src/modules/olt.js,web/src/olt.css,deploy/systemd/txapi-olt.service.tpl
+module.legacy_routes=/itms/handleOlt,/itms/handleONT,/itms/handleConnectOltUser,/itms/handleBoardAndSlotInfo,/itms/handleLinkAggregationInfo,/itms/handleCurrentConfiguration,/itms/handleLineProfile,/itms/handleSrvProfile,/itms/handleDBAProfile,/itms/handleTr069Profile,/itms/handleVLANFunctionModule
+module.menus=olt.overview,olt.ont,olt.profile
+module.external=service:itmssocketmain
+bundle=olt,all

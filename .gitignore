@@ -1,0 +1,25 @@
+# 构建产物
+dist/
+*.exe
+*.test
+txapi
+*.bak
+
+# 临时诊断/开发目录（不推仓库）
+dev/
+tmp_diag/
+
+# Python 工具缓存
+__pycache__/
+*.pyc
+
+# 黄金用例录制结果（如需长期保存再单独确认入库）
+tests/golden/records/
+
+# 依赖目录（仅 tools/domcheck 的真实 DOM 校验用）
+node_modules/
+
+# 编辑器
+.idea/
+.vscode/
+*.swp

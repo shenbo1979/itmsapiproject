@@ -1,0 +1,1746 @@
+{
+  "generated": true,
+  "source": "tests/golden/routes.json",
+  "cases": [
+    {
+      "path": "/client/apiPolicySave/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnDeleteWANPath/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnDeployWAN/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnDeviceDelete/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnDeviceReboot/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnDoOrderInfo/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnDoQosInfo/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnDoSIPInfo/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnDoTelnetInfo/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnDoWANDelete/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnDownModeFile/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnExportTemplate/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnFactoryReset/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnGetAdminInfo/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnGetAllParams/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnGetBusinessModeList/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnGetSIPInfo/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnGetWanConnect/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnGetWifiInfo/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnImportTemplate/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnInfosSave/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnLogDelete/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnModeCfgSave/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnRefreshDeviceInfo/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnSendWanPing/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnServerSave/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnSetAdminInfo/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnTestDiag/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnUpCpeGroup/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnWorkOrderDelete/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/client/fnWorkOrderSave/",
+      "module": "tr069",
+      "provider": "python",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/getTerminalMAC/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js"
+      ]
+    },
+    {
+      "path": "/itms/handleBoardAndSlotInfo/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js",
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleConnectOltUser/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleCpeGroupInfo/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleCurrentConfiguration/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleDBAProfile/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleDeviceDelete/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleDeviceInfo/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleDeviceInformation/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js",
+        "fusiongateway/web/assets/js/chunk-switchApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleDeviceStatus/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleEditRoom/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleItmsUpgraded/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": []
+    },
+    {
+      "path": "/itms/handleItmsVersion/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": []
+    },
+    {
+      "path": "/itms/handleLineProfile/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleLinkAggregationInfo/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleONTAutoFind/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleONTAutoMatic/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleONTListAndStatus/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleONTRegisterProfile/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleONTRegistration/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleOltConfigAutoSave/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleOltConnect/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js",
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleOltLogList/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleOltSavedConfig/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleOltTerminalUser/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleRpcApiConfig/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": []
+    },
+    {
+      "path": "/itms/handleServerConfig/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSrvProfile/",
+      "module": "olt",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchCollectionSettings/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchInfo/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js",
+        "fusiongateway/web/assets/js/chunk-switchApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchManufacturer/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js",
+        "fusiongateway/web/assets/js/chunk-switchApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchModel/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js",
+        "fusiongateway/web/assets/js/chunk-switchApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchPortDetail/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchProtocol/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js",
+        "fusiongateway/web/assets/js/chunk-switchApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchPurpose/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js",
+        "fusiongateway/web/assets/js/chunk-switchApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchSnifferConfig/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchTerminal/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchVenue/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js",
+        "fusiongateway/web/assets/js/chunk-switchApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleSwitchVlan/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "switchweb/src/api.js"
+      ]
+    },
+    {
+      "path": "/itms/handleTestDiag/",
+      "module": "unclassified",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleTr069LogList/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleTr069Poliey/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleTr069Profile/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleTr069TemplateList/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleUploadFile/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": []
+    },
+    {
+      "path": "/itms/handleUserAction/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleVLANFunctionModule/",
+      "module": "unclassified",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleVersionInfo/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleVlanClassifier/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": []
+    },
+    {
+      "path": "/itms/handleVlanInformation/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-switchApi.js"
+      ]
+    },
+    {
+      "path": "/itms/handleWorkOrderList/",
+      "module": "tr069",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": [
+        "fusiongateway/web/assets/js/chunk-itmsApi.js"
+      ]
+    },
+    {
+      "path": "/itms/validateThirdToken/",
+      "module": "switch",
+      "provider": "go",
+      "method": "POST",
+      "query": {
+        "nAct": "0"
+      },
+      "expect": {
+        "http": 200,
+        "required": [
+          "code",
+          "message"
+        ],
+        "note": "待补：录制基线后填写 code 与 data 字段要求"
+      },
+      "status": "todo",
+      "used_by": []
+    }
+  ]
+}

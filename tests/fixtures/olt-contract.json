@@ -1,0 +1,696 @@
+{
+ "generated_from": {
+  "routes_json": "/itmsapiproject/tests/golden/routes.json",
+  "old_olt_handler": "/switchProject/switchmain/olthandler.go",
+  "old_tr069_handler": "/switchProject/switchmain/tr069handler.go",
+  "old_web_js": "/fusiongateway/web/assets/js/chunk-itmsApi.js",
+  "module_go": "/itmsapiproject/internal/modules/olt/module.go",
+  "manifest": "/itmsapiproject/deploy/modules/olt.manifest"
+ },
+ "summary": {
+  "olt_routes_in_inventory": 19,
+  "declared_in_module_go": 19,
+  "declared_in_manifest_prefixes": 11,
+  "unclassified_candidates": 0
+ },
+ "entries": [
+  {
+   "path": "/itms/handleBoardAndSlotInfo/",
+   "handler": "handleBoardAndSlotInfo",
+   "comment": "初始板卡及插槽相关信息",
+   "registered_in_old_main": true,
+   "params": [
+    "trace",
+    "connData",
+    "saveData",
+    "refresh"
+   ],
+   "act_source": "—",
+   "act_cases": [],
+   "act_switches": [],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 103,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleConnectOltUser/",
+   "handler": "handleConnectOltUser",
+   "comment": "监听OLT连接用户信息",
+   "registered_in_old_main": true,
+   "params": [
+    "Act",
+    "saveData"
+   ],
+   "act_source": "form:Act",
+   "act_cases": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "act_switches": [
+    {
+     "header": "handleact",
+     "cases": [
+      0
+     ]
+    },
+    {
+     "header": "handleact",
+     "cases": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "connects_device": false,
+   "writes": [
+    "SQL 写"
+   ],
+   "handler_lines": 56,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleCurrentConfiguration/",
+   "handler": "handleCurrentConfiguration",
+   "comment": "OLT当前配置信息",
+   "registered_in_old_main": true,
+   "params": [
+    "Act",
+    "connData"
+   ],
+   "act_source": "form:Act",
+   "act_cases": [
+    0,
+    1
+   ],
+   "act_switches": [
+    {
+     "header": "a := handleact;",
+     "cases": [
+      0,
+      1
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 45,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleDBAProfile/",
+   "handler": "handleDBAProfile",
+   "comment": "DBA模版",
+   "registered_in_old_main": true,
+   "params": [
+    "connData",
+    "saveData"
+   ],
+   "act_source": "saveData(JSON 字段 Act)",
+   "act_cases": [
+    0,
+    1,
+    2
+   ],
+   "act_switches": [
+    {
+     "header": "a := dp.Act;",
+     "cases": [
+      0,
+      1,
+      2
+     ]
+    },
+    {
+     "header": "a",
+     "cases": [
+      1,
+      2
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 114,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleLineProfile/",
+   "handler": "handleLineProfile",
+   "comment": "ONT线路模版",
+   "registered_in_old_main": true,
+   "params": [
+    "connData",
+    "saveData"
+   ],
+   "act_source": "saveData(JSON 字段 Act)",
+   "act_cases": [
+    0,
+    1,
+    2
+   ],
+   "act_switches": [
+    {
+     "header": "a := lp.Act;",
+     "cases": [
+      0,
+      1,
+      2
+     ]
+    },
+    {
+     "header": "a",
+     "cases": [
+      1,
+      2
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 293,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleLinkAggregationInfo/",
+   "handler": "handleLinkAggregationInfo",
+   "comment": "端口汇聚功能",
+   "registered_in_old_main": true,
+   "params": [
+    "Act",
+    "connData",
+    "saveData"
+   ],
+   "act_source": "form:Act",
+   "act_cases": [
+    0,
+    1,
+    2
+   ],
+   "act_switches": [
+    {
+     "header": "handleact",
+     "cases": [
+      0,
+      1,
+      2
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 187,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleONTAutoFind/",
+   "handler": "handleONTAutoFind",
+   "comment": "查找发现新的ONT设备",
+   "registered_in_old_main": true,
+   "params": [
+    "connData"
+   ],
+   "act_source": "—",
+   "act_cases": [],
+   "act_switches": [],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 20,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleONTAutoMatic/",
+   "handler": "handleONTAutoMatic",
+   "comment": "ONT自动注册配置",
+   "registered_in_old_main": true,
+   "params": [
+    "Act",
+    "saveData"
+   ],
+   "act_source": "form:Act",
+   "act_cases": [
+    0,
+    1
+   ],
+   "act_switches": [
+    {
+     "header": "handleact",
+     "cases": [
+      0,
+      1
+     ]
+    }
+   ],
+   "connects_device": false,
+   "writes": [
+    "os.WriteFile",
+    "os.MkdirAll"
+   ],
+   "handler_lines": 62,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleONTListAndStatus/",
+   "handler": "handleONTListAndStatus",
+   "comment": "ONT配置/状态",
+   "registered_in_old_main": true,
+   "params": [
+    "trace",
+    "Act",
+    "connData",
+    "reqData",
+    "saveData"
+   ],
+   "act_source": "form:Act",
+   "act_cases": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    9
+   ],
+   "act_switches": [
+    {
+     "header": "act := handleact;",
+     "cases": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+     ]
+    },
+    {
+     "header": "act",
+     "cases": [
+      0,
+      9
+     ]
+    },
+    {
+     "header": "act",
+     "cases": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [
+    "os.MkdirAll"
+   ],
+   "handler_lines": 433,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleONTRegisterProfile/",
+   "handler": "handleONTRegisterProfile",
+   "comment": "ONT注册模板",
+   "registered_in_old_main": true,
+   "params": [
+    "Act",
+    "saveData"
+   ],
+   "act_source": "form:Act",
+   "act_cases": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "act_switches": [
+    {
+     "header": "act := handleact;",
+     "cases": [
+      0
+     ]
+    },
+    {
+     "header": "act",
+     "cases": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "connects_device": false,
+   "writes": [
+    "SQL 写"
+   ],
+   "handler_lines": 61,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleONTRegistration/",
+   "handler": "handleONTRegistration",
+   "comment": "ONT一键注册",
+   "registered_in_old_main": true,
+   "params": [
+    "trace",
+    "RegProFileId",
+    "connData",
+    "saveData"
+   ],
+   "act_source": "saveData(JSON 字段 Act)",
+   "act_cases": [],
+   "act_switches": [],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 390,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleOltConfigAutoSave/",
+   "handler": "handleOltConfigAutoSave",
+   "comment": "(OLT)OLT配置自动保存",
+   "registered_in_old_main": true,
+   "params": [
+    "Act",
+    "connData",
+    "saveData"
+   ],
+   "act_source": "form:Act",
+   "act_cases": [
+    0,
+    1
+   ],
+   "act_switches": [
+    {
+     "header": "act := handleact;",
+     "cases": [
+      0,
+      1
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 147,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleOltConnect/",
+   "handler": "handleOltConnect",
+   "comment": "初始化OLT相关信息",
+   "registered_in_old_main": true,
+   "params": [
+    "trace",
+    "Act",
+    "connData",
+    "refresh"
+   ],
+   "act_source": "form:Act",
+   "act_cases": [
+    0,
+    1
+   ],
+   "act_switches": [
+    {
+     "header": "handleact",
+     "cases": [
+      0,
+      1
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [
+    "os.MkdirAll",
+    "SQL 写"
+   ],
+   "handler_lines": 82,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleOltLogList/",
+   "handler": "handleOltLogList",
+   "comment": "渲染OLT日志列表",
+   "registered_in_old_main": true,
+   "params": [
+    "Act",
+    "reqData"
+   ],
+   "act_source": "form:Act",
+   "act_cases": [
+    0,
+    1,
+    2
+   ],
+   "act_switches": [
+    {
+     "header": "act := handleact;",
+     "cases": [
+      0,
+      1,
+      2
+     ]
+    }
+   ],
+   "connects_device": false,
+   "writes": [
+    "SQL 写"
+   ],
+   "handler_lines": 124,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleOltSavedConfig/",
+   "handler": "handleOltSavedConfig",
+   "comment": "(OLT)OLT保存配置",
+   "registered_in_old_main": true,
+   "params": [
+    "connData"
+   ],
+   "act_source": "—",
+   "act_cases": [],
+   "act_switches": [],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 42,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleOltTerminalUser/",
+   "handler": "handleOltTerminalUser",
+   "comment": "处理OLT登录用户",
+   "registered_in_old_main": true,
+   "params": [
+    "Act",
+    "connData",
+    "saveData"
+   ],
+   "act_source": "form:Act",
+   "act_cases": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "act_switches": [
+    {
+     "header": "a := handleact;",
+     "cases": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "header": "a",
+     "cases": [
+      1,
+      2,
+      3
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 116,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleSrvProfile/",
+   "handler": "handleSrvProfile",
+   "comment": "ONT业务模板(服务模板)",
+   "registered_in_old_main": true,
+   "params": [
+    "connData",
+    "saveData"
+   ],
+   "act_source": "saveData(JSON 字段 Act)",
+   "act_cases": [
+    0,
+    1,
+    2
+   ],
+   "act_switches": [
+    {
+     "header": "a := osp.Act;",
+     "cases": [
+      0,
+      1,
+      2
+     ]
+    },
+    {
+     "header": "a",
+     "cases": [
+      1,
+      2
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 255,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleTr069Profile/",
+   "handler": "handleTr069Profile",
+   "comment": "TR069管理模板",
+   "registered_in_old_main": true,
+   "params": [
+    "connData",
+    "saveData"
+   ],
+   "act_source": "saveData(JSON 字段 Act)",
+   "act_cases": [
+    0,
+    1,
+    2
+   ],
+   "act_switches": [
+    {
+     "header": "a := tp.Act;",
+     "cases": [
+      0,
+      1,
+      2
+     ]
+    },
+    {
+     "header": "a",
+     "cases": [
+      1,
+      2
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 163,
+   "old_web_params": []
+  },
+  {
+   "path": "/itms/handleVLANFunctionModule/",
+   "handler": "handleVLANFunctionModule",
+   "comment": "VLAN功能模块",
+   "registered_in_old_main": true,
+   "params": [
+    "connData",
+    "saveData"
+   ],
+   "act_source": "saveData(JSON 字段 Act)",
+   "act_cases": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "act_switches": [
+    {
+     "header": "a := hv.Act;",
+     "cases": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "header": "a",
+     "cases": [
+      1,
+      2
+     ]
+    }
+   ],
+   "connects_device": true,
+   "writes": [],
+   "handler_lines": 168,
+   "old_web_params": []
+  }
+ ],
+ "unclassified": [],
+ "declared": {
+  "routes_json": [
+   "/itms/handleBoardAndSlotInfo/",
+   "/itms/handleConnectOltUser/",
+   "/itms/handleCurrentConfiguration/",
+   "/itms/handleDBAProfile/",
+   "/itms/handleLineProfile/",
+   "/itms/handleLinkAggregationInfo/",
+   "/itms/handleONTAutoFind/",
+   "/itms/handleONTAutoMatic/",
+   "/itms/handleONTListAndStatus/",
+   "/itms/handleONTRegisterProfile/",
+   "/itms/handleONTRegistration/",
+   "/itms/handleOltConfigAutoSave/",
+   "/itms/handleOltConnect/",
+   "/itms/handleOltLogList/",
+   "/itms/handleOltSavedConfig/",
+   "/itms/handleOltTerminalUser/",
+   "/itms/handleSrvProfile/",
+   "/itms/handleTr069Profile/",
+   "/itms/handleVLANFunctionModule/"
+  ],
+  "module_go": [
+   "/itms/handleBoardAndSlotInfo/",
+   "/itms/handleConnectOltUser/",
+   "/itms/handleCurrentConfiguration/",
+   "/itms/handleDBAProfile/",
+   "/itms/handleLineProfile/",
+   "/itms/handleLinkAggregationInfo/",
+   "/itms/handleONTAutoFind/",
+   "/itms/handleONTAutoMatic/",
+   "/itms/handleONTListAndStatus/",
+   "/itms/handleONTRegisterProfile/",
+   "/itms/handleONTRegistration/",
+   "/itms/handleOltConfigAutoSave/",
+   "/itms/handleOltConnect/",
+   "/itms/handleOltLogList/",
+   "/itms/handleOltSavedConfig/",
+   "/itms/handleOltTerminalUser/",
+   "/itms/handleSrvProfile/",
+   "/itms/handleTr069Profile/",
+   "/itms/handleVLANFunctionModule/"
+  ],
+  "manifest_prefixes": [
+   "/itms/handleOlt",
+   "/itms/handleONT",
+   "/itms/handleConnectOltUser",
+   "/itms/handleBoardAndSlotInfo",
+   "/itms/handleLinkAggregationInfo",
+   "/itms/handleCurrentConfiguration",
+   "/itms/handleLineProfile",
+   "/itms/handleSrvProfile",
+   "/itms/handleDBAProfile",
+   "/itms/handleTr069Profile",
+   "/itms/handleVLANFunctionModule"
+  ]
+ }
+}
